@@ -1,11 +1,10 @@
 import { useEffect, useRef } from "react"
-import gsap from 'gsap'
+import gsap from "gsap"
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin"
 
 gsap.registerPlugin(MotionPathPlugin)
 
 export function Swing({ children }) {
-
 	// select wrapper of elements that will be animated
 	const wrapperRef = useRef()
 
@@ -21,23 +20,23 @@ export function Swing({ children }) {
 		const elements = gsap.utils.toArray(wrapper.children)
 
 		// 1) swing animation for each element
-		elements.forEach(element => {
+		elements.forEach((element) => {
 			const size = element.dataset.size
 			const randSize = 100 - size
 			gsap.to(element, {
 				motionPath: {
 					path: [
-						{x: -randSize / 1.5, y: 0},
-						{x: -randSize / 1.5, y: -randSize / 2},
-						{x: 0, y: -randSize / 2},
-						{x: 0, y: 0}
+						{ x: -randSize / 1.5, y: 0 },
+						{ x: -randSize / 1.5, y: -randSize / 2 },
+						{ x: 0, y: -randSize / 2 },
+						{ x: 0, y: 0 },
 					],
 					curviness: 1,
 				},
 				duration: getRandom(size / 3, size / 2),
-				ease: 'none',
+				ease: "none",
 				repeat: -1,
-				delay: getRandom(0, 4)
+				delay: getRandom(0, 4),
 			})
 		})
 

@@ -1,13 +1,16 @@
 import { useState, useEffect, useRef } from "react"
 import Head from "next/head"
-import Image from 'next/image'
+import Image from "next/image"
 import Layout from "../components/constants/Layout"
-import Productions from '../components/productions/Productions'
-import { TextReveal, TextRevealPinned } from '../components/animations/TextReveal'
-import { Parallax, ParallaxOverflow } from '../components/animations/Parallax'
-import { FadeIn, FadeInStagger } from '../components/animations/FadeIn'
-import gsap from 'gsap'
-import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import Productions from "../components/productions/Productions"
+import {
+	TextReveal,
+	TextRevealPinned,
+} from "../components/animations/TextReveal"
+import { Parallax, ParallaxOverflow } from "../components/animations/Parallax"
+import { FadeIn, FadeInStagger } from "../components/animations/FadeIn"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import ReelModal from "../components/modal/ReelModal"
 
 gsap.registerPlugin(ScrollTrigger)
@@ -22,19 +25,19 @@ export default function Home() {
 
 	const [open, setOpen] = useState(false)
 
-	const plus =  useRef()
-	const overlay =  useRef()
+	const plus = useRef()
+	const overlay = useRef()
 	useEffect(() => {
 		gsap.to(plus.current, {
-			  scale: 100,
-				//force3D: false,
+			scale: 100,
+			//force3D: false,
 			scrollTrigger: {
 				trigger: overlay.current,
 				start: "top top",
 				end: "bottom top",
-	  		scrub: true,
+				scrub: true,
 				pin: true,
-			}
+			},
 		})
 	}, [])
 
@@ -56,25 +59,34 @@ export default function Home() {
 				<div className="landing-content">
 					<h1 className="landing-content-title">
 						<span className="wrapper-span">
-							<span>s</span><span>t</span><span>a</span><span>y</span>
+							<span>s</span>
+							<span>t</span>
+							<span>a</span>
+							<span>y</span>
 						</span>
 						<span className="wrapper-span">
-							<span>w</span><span>i</span><span>l</span><span>d</span>
+							<span>w</span>
+							<span>i</span>
+							<span>l</span>
+							<span>d</span>
 						</span>
 					</h1>
 					<h1 className="landing-content-title">
 						<span className="wrapper-span">
-							<span>h</span><span>a</span><span>v</span><span>e</span>
+							<span>h</span>
+							<span>a</span>
+							<span>v</span>
+							<span>e</span>
 						</span>
 						<span className="wrapper-span">
-							<span>m</span><span>o</span><span>v</span><span>e</span>
+							<span>m</span>
+							<span>o</span>
+							<span>v</span>
+							<span>e</span>
 						</span>
 					</h1>
 					<ReelModal open={open} setOpen={setOpen} />
-					<button
-						className="watch-showreel-btn"
-						onClick={() => setOpen(true)}
-					>
+					<button className="watch-showreel-btn" onClick={() => setOpen(true)}>
 						watch showreel
 					</button>
 				</div>
@@ -109,7 +121,7 @@ export default function Home() {
 					<div id="img-wrapper_1-1" className="image-wrapper" data-speed="0.2">
 						<ParallaxOverflow>
 							<Image
-								src='/images/skills/1-1.webp'
+								src="/images/skills/1-1.webp"
 								objectFit="contain"
 								width="1366"
 								height="570"
@@ -120,7 +132,7 @@ export default function Home() {
 					<div id="img-wrapper_1-2" className="image-wrapper" data-speed="0.2">
 						<ParallaxOverflow>
 							<Image
-								src='/images/skills/1-2.webp'
+								src="/images/skills/1-2.webp"
 								objectFit="contain"
 								width="640"
 								height="360"
@@ -131,7 +143,7 @@ export default function Home() {
 					<div id="img-wrapper_1-3" className="image-wrapper" data-speed="0.2">
 						<ParallaxOverflow>
 							<Image
-								src='/images/skills/1-3.webp'
+								src="/images/skills/1-3.webp"
 								objectFit="contain"
 								width="519"
 								height="369"
@@ -142,7 +154,7 @@ export default function Home() {
 					<div id="img-wrapper_1-4" className="image-wrapper" data-speed="0.9">
 						<ParallaxOverflow>
 							<Image
-								src='/images/skills/1-4.webp'
+								src="/images/skills/1-4.webp"
 								objectFit="contain"
 								width="750"
 								height="336"
@@ -153,7 +165,7 @@ export default function Home() {
 					<div id="img-wrapper_2-1" className="image-wrapper" data-speed="0.7">
 						<ParallaxOverflow>
 							<Image
-								src='/images/skills/2-1.webp'
+								src="/images/skills/2-1.webp"
 								objectFit="contain"
 								width="1080"
 								height="1350"
@@ -164,7 +176,7 @@ export default function Home() {
 					<div id="img-wrapper_2-2" className="image-wrapper" data-speed="0.6">
 						<ParallaxOverflow>
 							<Image
-								src='/images/skills/2-2.webp'
+								src="/images/skills/2-2.webp"
 								objectFit="contain"
 								width="640"
 								height="800"
@@ -175,7 +187,7 @@ export default function Home() {
 					<div id="img-wrapper_2-3" className="image-wrapper" data-speed="0.5">
 						<ParallaxOverflow>
 							<Image
-								src='/images/skills/2-3.webp'
+								src="/images/skills/2-3.webp"
 								objectFit="contain"
 								width="750"
 								height="938"
@@ -186,7 +198,7 @@ export default function Home() {
 					<div id="img-wrapper_2-4" className="image-wrapper" data-speed="1.2">
 						<ParallaxOverflow>
 							<Image
-								src='/images/skills/2-4.webp'
+								src="/images/skills/2-4.webp"
 								objectFit="contain"
 								width="640"
 								height="729"
@@ -197,7 +209,7 @@ export default function Home() {
 					<div id="img-wrapper_3-1" className="image-wrapper" data-speed="0.8">
 						<ParallaxOverflow>
 							<Image
-								src='/images/skills/3-1.webp'
+								src="/images/skills/3-1.webp"
 								objectFit="contain"
 								width="480"
 								height="853"
@@ -208,7 +220,7 @@ export default function Home() {
 					<div id="img-wrapper_3-2" className="image-wrapper" data-speed="1.2">
 						<ParallaxOverflow>
 							<Image
-								src='/images/skills/3-2.webp'
+								src="/images/skills/3-2.webp"
 								objectFit="contain"
 								width="640"
 								height="1138"
@@ -219,7 +231,7 @@ export default function Home() {
 					<div id="img-wrapper_3-3" className="image-wrapper" data-speed="1.1">
 						<ParallaxOverflow>
 							<Image
-								src='/images/skills/3-3.webp'
+								src="/images/skills/3-3.webp"
 								objectFit="contain"
 								width="320"
 								height="569"
@@ -232,7 +244,10 @@ export default function Home() {
 
 			<section className="brands">
 				<FadeIn>
-					<p>I've worked with great artists and brands. There is love for them all.</p>
+					<p>
+						I've worked with great artists and brands. There is love for them
+						all.
+					</p>
 				</FadeIn>
 				<FadeInStagger>
 					<img src="/images/brands/samsung.png" alt="Samsung" />
@@ -252,9 +267,11 @@ export default function Home() {
 						className="plus"
 						ref={plus}
 					>
-						<path fill="black"
+						<path
+							fill="black"
 							d="M4519,0 L4519,3213 L0,3213 L0,0 L4519,0 Z M2322,1587.74993 L2278.24999,1587.74999 L2278.25006,1544 L2240.75003,1544 L2240.74994,1587.75003 L2197,1587.75011 L2197,1625.24989 L2240.74991,1625.25007 L2240.75008,1669 L2278.24992,1669 L2278.24996,1625.25003 L2322,1625.24999 L2322,1587.74993 Z"
-							fillRule="evenodd"></path>
+							fillRule="evenodd"
+						></path>
 					</svg>
 				</div>
 				<Productions />

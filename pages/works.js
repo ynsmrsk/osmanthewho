@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
-import { Swing } from '../components/animations/Swing'
-import { data }from "../components/selectedWorks/selected-works-data"
+import { useEffect, useState, useRef } from "react"
+import { Swing } from "../components/animations/Swing"
+import { MouseMoveScroll } from "../components/animations/MouseMoveScroll"
+import { data } from "../components/selectedWorks/selected-works-data"
 import Thumbnail from "../components/selectedWorks/Thumbnail"
-import gsap from 'gsap'
 
 export default function Works() {
 	const [thumbnails, setThumbnails] = useState([])
@@ -10,21 +10,30 @@ export default function Works() {
 	const thumbnailList = []
 	const minWidth = 30
 	const maxWidth = 60
+	const holder = useRef()
 
 	const createThumbnail = () => {
-		const container = document.querySelector('#holder')
-		const randWidth = Math.floor(Math.random() * (maxWidth - minWidth + 1)) + minWidth
+
+		const randWidth =
+			Math.floor(Math.random() * (maxWidth - minWidth + 1)) + minWidth
 		const randHeight = randWidth / 2
 
-		const pixelWidth = document.documentElement.clientWidth * randWidth / 100
-		const pixelHeight = document.documentElement.clientWidth * randHeight / 100
+		const pixelWidth = (document.documentElement.clientWidth * randWidth) / 100
+		const pixelHeight =
+			(document.documentElement.clientWidth * randHeight) / 100
 
 		function getRandom(min, max) {
 			return Math.random() * (max - min) + min
 		}
 
-		const randX = getRandom((pixelWidth * 0.5), (container.offsetWidth - (pixelWidth * 1.5)))
-		const randY = getRandom((pixelHeight), (container.offsetHeight - (pixelHeight * 2)))
+		const randX = getRandom(
+			pixelWidth * 0.5,
+			holder.current.offsetWidth - pixelWidth * 1.5
+		)
+		const randY = getRandom(
+			pixelHeight,
+			holder.current.offsetHeight - pixelHeight * 2
+		)
 
 		let minDistanceX
 		let minDistanceY
@@ -69,68 +78,29 @@ export default function Works() {
 			createThumbnail()
 
 			protection++
-			if (protection > 1000000)
-				break
+			if (protection > 1000000) break
 		}
 		setThumbnails(thumbnailList)
-
-////////////////////////// Mouse Move
-
-		let holder = document.querySelector('#holder'),
-				overflowX, mapPositionX,
-				overflowY, mapPositionY
-
-		function onResize(e) {
-			overflowX = holder.offsetWidth - window.innerWidth
-			overflowY = holder.offsetHeight - window.innerHeight
-			mapPositionX = gsap.utils.mapRange(0, window.innerWidth, overflowX / 2, overflowX / -2)
-			mapPositionY = gsap.utils.mapRange(0, window.innerHeight, overflowY / 2, overflowY / -2)
-		}
-
-		function onMouseMove(e) {
-			if (overflowX > 0 || overflowY > 0) {
-				let x = e.clientX || (e.changedTouches && e.changedTouches[0].clientX) || 0
-				let y = e.clientY || (e.changedTouches && e.changedTouches[0].clientY) || 0
-				gsap.to(holder, {duration: 7, overwrite: true, ease: "power3", x: mapPositionX(x), y: mapPositionY(y) })
-			}
-		}
-
-
-		window.addEventListener("resize", onResize)
-		document.addEventListener("pointermove", onMouseMove)
-		onResize()
-
 	}, [])
 
 	return (
-		<>
-			<div id="wrapper">
-				<div id="container">
-					<div id="holder">
-						{
-							thumbnails.length != 0 ? (
-								<Swing>
-									{
-										thumbnails.map((thumbnail, i) => (
-											<Thumbnail
-												key={i}
-												randWidth={thumbnail.randWidth}
-												randHeight={thumbnail.randHeight}
-												randX={thumbnail.randX}
-												randY={thumbnail.randY}
-												title={data[i].title}
-												img={data[i].img}
-												url={data[i].url}
-											>
-											</Thumbnail>
-										))
-									}
-								</Swing>
-							) : null
-						}
-					</div>
-				</div>
-			</div>
-		</>
+		<MouseMoveScroll ref={holder}>
+			{thumbnails.length != 0 ? (
+				<Swing>
+					{thumbnails.map((thumbnail, i) => (
+						<Thumbnail
+							key={i}
+							randWidth={thumbnail.randWidth}
+							randHeight={thumbnail.randHeight}
+							randX={thumbnail.randX}
+							randY={thumbnail.randY}
+							title={data[i].title}
+							img={data[i].img}
+							url={data[i].url}
+						></Thumbnail>
+					))}
+				</Swing>
+			) : null}
+		</MouseMoveScroll>
 	)
 }
