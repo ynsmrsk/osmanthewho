@@ -31,14 +31,9 @@
   "resolved" "https://registry.npmjs.org/@next/env/-/env-12.1.0.tgz"
   "version" "12.1.0"
 
-"@next/swc-linux-x64-gnu@12.1.0":
-  "integrity" "sha512-OKO4R/digvrVuweSw/uBM4nSdyzsBV5EwkUeeG4KVpkIZEe64ZwRpnFB65bC6hGwxIBnTv5NMSnJ+0K/WmG78A=="
-  "resolved" "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-12.1.0.tgz"
-  "version" "12.1.0"
-
-"@next/swc-linux-x64-musl@12.1.0":
-  "integrity" "sha512-JohhgAHZvOD3rQY7tlp7NlmvtvYHBYgY0x5ZCecUT6eCCcl9lv6iV3nfu82ErkxNk1H893fqH0FUpznZ/H3pSw=="
-  "resolved" "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-12.1.0.tgz"
+"@next/swc-darwin-arm64@12.1.0":
+  "integrity" "sha512-R8vcXE2/iONJ1Unf5Ptqjk6LRW3bggH+8drNkkzH4FLEQkHtELhvcmJwkXcuipyQCsIakldAXhRbZmm3YN1vXg=="
+  "resolved" "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-12.1.0.tgz"
   "version" "12.1.0"
 
 "anymatch@~3.1.1":
@@ -122,6 +117,11 @@
   "version" "6.0.1"
   dependencies:
     "tslib" "^2.1.0"
+
+"fsevents@~2.3.1":
+  "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
+  "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  "version" "2.3.2"
 
 "glob-parent@~5.1.0":
   "integrity" "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow=="

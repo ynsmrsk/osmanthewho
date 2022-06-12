@@ -4,23 +4,21 @@ export default function Fullscreen() {
 	const [isFullscreen, setIsFullscreen] = useState(false)
 
 	const toggleFullscreen = () => {
-		setIsFullscreen(prevIsFullscreen => !prevIsFullscreen)
-		if (!document.fullscreenElement) {
-				document.documentElement.requestFullscreen();
+		if (isFullscreen) {
+			document.exitFullscreen();
 		} else {
-			if (document.exitFullscreen) {
-				document.exitFullscreen();
-			}
+			document.documentElement.requestFullscreen();
 		}
+		setIsFullscreen(!isFullscreen);
 	}
 
 	return (
 		<div className="fullscreen-wrapper" onClick={toggleFullscreen}>
 			{
 				isFullscreen ? (
-					<img src="/icons/fullscreen-close.svg" className="fullscreen-close" />
+					<img src="/icons/fullscreen-close.svg" className="fullscreen-close" alt="close fullscreen icon" />
 				) : (
-					<img src="/icons/fullscreen-open.svg" className="fullscreen-open" />
+					<img src="/icons/fullscreen-open.svg" className="fullscreen-open" alt="open fullscreen icon" />
 				)
 			}
 		</div>

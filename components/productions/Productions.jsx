@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import ProductionList from "../productionList/ProductionList"
-import { FadeIn, FadeInStagger } from "../animations/FadeIn"
+import { FadeIn } from "../animations/FadeIn"
 import VideoModal from "../modal/VideoModal"
 import {
 	allProductions,
