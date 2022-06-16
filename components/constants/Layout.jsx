@@ -5,8 +5,6 @@ import Footer from "../footer/Footer"
 import Fullscreen from "../fullscreen/Fullscreen"
 import ContactModal from "../modal/ContactModal"
 
-// css transform breaks the 'position: fixed' rule
-
 export default function Layout({ children }) {
 	return (
 			<div className="layout-container">
