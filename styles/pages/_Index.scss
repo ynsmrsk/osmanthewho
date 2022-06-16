@@ -1,3 +1,4 @@
+// Landing
 .landing {
 	width: 100%;
 	height: 100vh;
@@ -13,12 +14,22 @@
 	z-index: 1;
 }
 
-.linear-gradient-div {
-	background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+.index-linear-gradient-div-top,
+.index-linear-gradient-div-bottom {
 	position: absolute;
-	z-index: 2;
 	width: 100%;
-	height: 102%;
+	height: 70%;
+	z-index: 2;
+}
+
+.index-linear-gradient-div-top {
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+	top: 0;
+}
+
+.index-linear-gradient-div-bottom {
+	background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+	bottom: 0;
 }
 
 .landing-content {
@@ -27,48 +38,34 @@
 	z-index: 2;
 	width: 100%;
 	height: 100%;
-//	mix-blend-mode: overlay;
+}
+
+.landing-content-title-container {
+	margin-bottom: 3rem;
+	@include center-content;
 }
 
 .landing-content-title {
+	font-family: $font-family-heading;
+	font-weight: normal;
 	display: flex;
-
-	.wrapper-span {
-		-webkit-text-stroke: clamp(1.1px, 0.2vw, 2px) #ccc;
-		padding: 0 0.7rem 0 0.7rem;
-		letter-spacing: $letter-spacing-xl;
-		font-family: $font-family-heading;
-		font-size: $step-9;
-		will-change: transform;
-
-		span {
-			color: rgba(20, 20, 20, 0.5);
-			transition: 0.2s;
-		}
-		span:hover {
-			color: rgba(70, 70, 70, 0.5);
-		}
-	}
 }
 
 .watch-showreel-btn {
-	margin-top: 3rem;
 	font-family: $font-family-heading;
 	letter-spacing: 1px;
 	padding: 1rem 2rem;
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.3);
 	backdrop-filter: blur(5px);
-	color: #ccc;
+	color: $white;
 	border: 1px solid #ccc;
 }
 
 .watch-showreel-btn:hover {
-	background: rgba(150, 150, 150, 0.5);
 	letter-spacing: 3px;
 }
 
-/////////// self intro ///////////////
-
+// Self introduction
 .self-intro {
 	text-align: center;
 	margin-top: 5rem;
@@ -78,13 +75,12 @@
 		opacity: 0;
 		font-size: $step-5;
 		font-weight: bold;
-		min-height: 250px;
+		min-height: 350px;
 		will-change: transform;
 	}
 }
 
-////////////// skills /////////////////
-
+// Skills
 .skills {
 	@include center-content;
 	position: relative;
@@ -130,7 +126,7 @@
 	width: clamp(300px, 55vw, 1366px);
 	height: auto;
 	top: 25%;
-	left: 0%;
+	left: 0;
 }
 
 #img-wrapper_1-2 {
@@ -160,7 +156,7 @@
 #img-wrapper_2-2 {
 	width: clamp(200px, 20vw, 640px);
 	top: 53%;
-	left: 0%;
+	left: 0;
 }
 
 #img-wrapper_2-3 {
@@ -172,7 +168,7 @@
 #img-wrapper_2-4 {
 	width: clamp(200px, 23vw, 640px);
 	top: 93%;
-	right: 0%;
+	right: 0;
 }
 
 #img-wrapper_3-1 {
@@ -193,7 +189,7 @@
 	left: 15%;
 }
 
-///////////////// brands /////////////////
+// Brands
 
 .brands {
 	@include center-content;
@@ -218,8 +214,7 @@
   }
 }
 
-///////////////// works /////////////////
-
+// Productions
 .featured-productions {
 	color: $black;
 	position: relative;
@@ -246,27 +241,19 @@
 	will-change: transform;
 }
 
-///////////// media queries /////////////
-
+// Media queries
 @media screen and (max-width: 599px) {
 	.landing-content-title {
 		flex-direction: column;
-
-		.wrapper-span {
-			font-size: $step-11;
-			margin: 15px 0;
-		}
-	}
-
-	.landing-content-title span {
-		padding: 0;
+		font-size: $step-11;
+		margin: 10px 0;
 	}
 }
 
 @media screen and (max-width: 899px) {
   .watch-showreel-btn {
 		font-size: 12px;
-		padding: 0.80rem 1.60rem;
+		  padding: 0.6rem 1.2rem;
 	}
 
 	.brands {
@@ -282,19 +269,18 @@
 	}
 }
 
-//// media queries for skills section images ////
-
+// Media queries for skills section images
 @media screen and (max-width: 599px) {
 	#img-wrapper_1-1 {
 		width: clamp(300px, 80vw, 1366px);
 		top: 25%;
-		left: 0%;
+		left: 0;
 	}
 
 	#img-wrapper_1-2 {
 		width: clamp(250px, 50vw, 640px);
 		top: 45%;
-		right: 0%;
+		right: 0;
 	}
 
 	#img-wrapper_1-3 {
@@ -318,7 +304,7 @@
 	#img-wrapper_2-2 {
 		width: clamp(200px, 25vw, 640px);
 		top: 53%;
-		left: 0%;
+		left: 0;
 	}
 
 	#img-wrapper_2-3 {
@@ -352,8 +338,7 @@
 	}
 }
 
-/////////////////////////////////////////////
-
+// Media queries for skills section images
 @media screen and (min-width: 599px) and (max-width: 899px) {
 	#img-wrapper_1-1 {
 		width: clamp(300px, 65vw, 1366px);
@@ -376,7 +361,7 @@
 	#img-wrapper_1-4 {
 		width: clamp(280px, 45vw, 750px);
 		top: 94%;
-		left: 0%;
+		left: 0;
 	}
 
 	#img-wrapper_2-1 {
@@ -400,7 +385,7 @@
 	#img-wrapper_2-4 {
 		width: clamp(200px, 30vw, 640px);
 		top: 90%;
-		right: 0%;
+		right: 0;
 	}
 
 	#img-wrapper_3-1 {
