@@ -34,58 +34,43 @@ export default function ContactModal() {
         animationDuration={1000}
 			>
 				<div className="contact-modal-content">
-					<div className="contact-heading-section contact-section">
+					<div className="contact-heading-section">
 						<h1 className="contact-heading-title">Get in touch</h1>
 						<p className="contact-heading-subtext">
 							Whenever, wherever. We are meant to work together.
 						</p>
 					</div>
 
-					<div className="contact-form-section contact-section">
+					<div className="contact-form-section">
 					<form name="contact" className="contact-form" method="post" action="">
-						<input className="input" type="text" name="name" placeholder="Full Name" />
-						<input className="input" type="text" name="email" placeholder="E-mail" />
-						<textarea className="input text-area" name="message" placeholder="Your Message"></textarea>
-						<input className="input form-submit-btn" type="submit" value="Submit" />
+						<input className="input" type="text" name="name" placeholder="Name" />
+						<input className="input" type="text" name="email" placeholder="Email" />
+						<textarea className="input text-area" name="message" placeholder="Message"></textarea>
+						<button className="form-submit-btn" type="submit">Submit</button>
 					</form>
 					</div>
 
-					<div className="contact-info-section contact-section">
+					<div className="contact-info-section">
 						<div className="contact-info">
-							<p className="contact-info-label">
-								Phone
-							</p>
+							<p className="contact-info-label">Phone:</p>
+							<p className="contact-info-detail">(+90) 5xx xxx xx xx</p>
+						</div>
+						<div className="contact-info">
+							<p className="contact-info-label">Email:</p>
 							<p className="contact-info-detail">
-								(+90) 5xx xxx xx xx
+								<a target="_blank" href="mailto:info@osmanthewho.com?subject=Hi Osman! I'm contacting because..." >info@osmanthewho.com</a>
 							</p>
 						</div>
 						<div className="contact-info">
-							<p className="contact-info-label">
-								Email
-							</p>
-							<p className="contact-info-detail">
-								<a
-									target="_blank"
-									href="mailto:info@osmanthewho.com?subject=Hi Osman! I'm contacting because..."
-								>
-									info@osmanthewho.com
-								</a>
-							</p>
-						</div>
-						<div className="contact-info">
-							<p className="contact-info-label">
-								Address
-							</p>
+							<p className="contact-info-label">Address:</p>
 							<p className="contact-info-detail">
 								<a target="_blank" href="https://goo.gl/maps/VGWB4sXd64Qz3ej56">
-									Kocaeli Turkey
+									Kuzguncuk 34674 Uskudar/Istanbul
 								</a>
 							</p>
 						</div>
 						<div className="contact-info">
-							<p className="contact-info-label">
-								Follow me
-							</p>
+							<p className="contact-info-label">Follow me:</p>
 							<p className="contact-info-detail social-icons">
 								<a target="_blank" href="https://www.instagram.com/osmanthewho/">
 									<img className="contact-social-icons" src="/icons/social/instagram.svg" alt="Instagram" />
@@ -110,7 +95,7 @@ export default function ContactModal() {
 					</div>
 				</div>
 			</Modal>
-			<div className="cta-btn" onClick={() => setOpen(true)}>Contact</div>
+			<div className="contact-btn" onClick={() => setOpen(true)}>Contact</div>
 		</>
 	)
 }
