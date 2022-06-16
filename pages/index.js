@@ -18,8 +18,7 @@ export default function Home() {
 	useEffect(() => {
 		let video = document.querySelector("video")
 		window.addEventListener("scroll", function () {
-			let value = 0.7 + window.scrollY / -1000
-			video.style.opacity = value
+			video.style.opacity = `${0.7 + window.scrollY / -1000}`
 		})
 	}, [])
 
@@ -43,6 +42,10 @@ export default function Home() {
 
 	return (
 		<Layout>
+			<Head>
+				<title>Osman Işık | Film Creator</title>
+				<link rel="icon" href="/images/favicon.ico" />
+			</Head>
 			<section className="landing full-bleed">
 				<video
 					className="video-full-screen"
@@ -54,37 +57,20 @@ export default function Home() {
 					loop
 				/>
 
-				<div className="linear-gradient-div"></div>
+				<div className="index-linear-gradient-div-top"></div>
+				<div className="index-linear-gradient-div-bottom"></div>
 
 				<div className="landing-content">
-					<h1 className="landing-content-title">
-						<span className="wrapper-span">
-							<span>s</span>
-							<span>t</span>
-							<span>a</span>
-							<span>y</span>
-						</span>
-						<span className="wrapper-span">
-							<span>w</span>
-							<span>i</span>
-							<span>l</span>
-							<span>d</span>
-						</span>
-					</h1>
-					<h1 className="landing-content-title">
-						<span className="wrapper-span">
-							<span>h</span>
-							<span>a</span>
-							<span>v</span>
-							<span>e</span>
-						</span>
-						<span className="wrapper-span">
-							<span>m</span>
-							<span>o</span>
-							<span>v</span>
-							<span>e</span>
-						</span>
-					</h1>
+					<div className="landing-content-title-container">
+						 <h1 className="landing-content-title">
+							  <span className="title-word">stay</span>
+							  <span className="title-word">wild</span>
+						 </h1>
+						 <h1 className="landing-content-title">
+							  <span className="title-word">have</span>
+							  <span className="title-word">move</span>
+						 </h1>
+					</div>
 					<ReelModal open={open} setOpen={setOpen} />
 					<button className="watch-showreel-btn" onClick={() => setOpen(true)}>
 						watch showreel
@@ -93,20 +79,20 @@ export default function Home() {
 			</section>
 
 			<section className="self-intro">
-				<TextReveal>
-					<p>
-						I promote living life to the fullest and <br />
-						seeing the world through an optimistic lens.
-					</p>
-					<p>
-						I'm Osman. I'm a filmmaker, photographer, <br />
-						designer and director in Turkey.
-					</p>
-					<p>
-						I produce creative contents for brands. <br />
-						Hit me up to collab!
-					</p>
-				</TextReveal>
+				 <TextReveal>
+					  <p>
+						  I promote living life to the fullest and <br />
+						  seeing the world through an optimistic lens.
+					  </p>
+					  <p>
+						  I'm Osman. I'm a filmmaker, photographer, <br />
+						  designer and director in Turkey.
+					  </p>
+					  <p>
+						  I produce creative contents for brands. <br />
+						  Hit me up to collaboration!
+					  </p>
+				 </TextReveal>
 			</section>
 
 			<section className="skills">
