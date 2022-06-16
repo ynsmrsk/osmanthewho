@@ -1,6 +1,5 @@
 import Head from "next/head"
 import Layout from "../components/constants/Layout"
-import { FadeIn } from "../components/animations/FadeIn"
 
 export default function About() {
 	return (
@@ -10,42 +9,34 @@ export default function About() {
 			</Head>
 
 			<section className="about-hero">
-				<h1>
-					<h1>
-						<span>FILM</span>
-					</h1>
-					<span>MAKER</span>
-				</h1>
-				<h1>
-					<span>CREATIVE</span>
-				</h1>
-				<h1>
-					<span>DIRECTOR</span>
-				</h1>
-				<h1>
-					<span>EDITOR</span>
-				</h1>
+				<h1><span>filmmaker</span></h1>
+				<h1><span>creative</span></h1>
+				<h1><span>director</span></h1>
+				<h1><span>editor</span></h1>
+			</section>
+
+			<section className="about-photo full-bleed">
+				<div className="about-linear-gradient-div-top"></div>
+				<div className="about-linear-gradient-div-bottom"></div>
+				<img src="/images/osman.jpeg" alt="Osman Işık" />
 			</section>
 
 			<section className="intro">
-				<FadeIn>
-					<img src="/images/osman.webp" alt="Osman Işık" />
-				</FadeIn>
-				<FadeIn>
-					<div className="intro-text">
-						<h3>Osman Işık</h3>
-						<br /> <hr /> <br />
-						<p>I promote living the life to the fullest and seeing the world
-							through an optimistic lens.</p>
-						<p>I'm Osman. I'm a filmmaker, photographer, designer and director
-							in Turkey. I produce creative content for brands.</p>
-						<p>You can visit my{" "}
-							<a href="https://www.instagram.com/osmanthewho" target="_blank">
-								Instagram
-							</a>{" "}
-							account to see my jobs. I'm available for freelance work.</p>
-					</div>
-				</FadeIn>
+				 <div className="intro-text">
+					  <p>
+						  I promote living the life to the fullest and seeing the world
+						  through an optimistic lens.
+					  </p>
+					  <p>
+						  I'm Osman Işık. I'm a filmmaker, photographer, designer and director
+						  in Turkey. I produce commercial videos and social media content for brands.
+						  You can visit my{" "}
+						  <a href="https://www.instagram.com/osmanthewho" target="_blank">
+							  Instagram
+						  </a>{" "}
+						  account to see my jobs. I'm available for freelance work.
+					  </p>
+				 </div>
 			</section>
 		</Layout>
 	)
