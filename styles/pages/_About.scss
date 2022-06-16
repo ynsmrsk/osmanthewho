@@ -1,7 +1,8 @@
 .about-hero {
   @include center-content;
 	min-height: 100vh;
-	margin-top: 45px;
+	margin-top: 40px;
+	margin-bottom: 7vw;
 }
 
 .about-hero h1 {
@@ -10,52 +11,42 @@
 
 .about-hero h1 span {
 	display: block;
-	background-clip: text;
 	background: linear-gradient(180deg, $black 0%, $grey 60%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
-	font-family: $font-family-heading-bold;
-	line-height: $line-height-sm;
-	letter-spacing: $letter-spacing-md;
 	font-size: $step-9;
-	text-transform: uppercase;
 }
 
-.about-hero > h1:nth-child(1) {
-	display: flex;
-}
-
-/* ---------------------- about me ---------------------- */
-.intro {
-	min-height: 120vh;
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-
+.about-photo {
+	margin-bottom: 7vw;
+	position: relative;
+	background: darkorange;
 	img {
 		object-fit: cover;
-		margin-right: 50px;
-		border-radius: 3px;
+		display: block;
+	}
+	.about-linear-gradient-div-top,
+	.about-linear-gradient-div-bottom {
+		position: absolute;
+		width: 100%;
+		height: 50%;
+	}
+	.about-linear-gradient-div-top {
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+		top: -2.5%;
 	}
 
+	.about-linear-gradient-div-bottom {
+		background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+		bottom: -3.5%;
+	}
+}
+
+.intro {
+	margin-bottom: 7vw;
 	.intro-text {
-		max-width: 650px;
-
-		h3 {
-			@include text-stroke;
-		}
-
-		hr {
-			border: none;
-			height: 1px;
-			background-color: grey;
-		}
-
-		p:not(:last-child) {
-			padding-bottom: 1.5rem;
-		}
-
+		text-align: center;
 		a {
 			font-style: italic;
 			text-decoration: underline;
@@ -63,46 +54,17 @@
 	}
 }
 
-/* ------------------- media queries ------------------- */
-
-@media only screen and (max-width: 599px) {
+@media (max-width: 599px) {
 	.about-hero {
-		margin-top: -10px;
+		text-align: left;
+		align-items: start;
+		min-height: unset;
+		margin-top: 100px;
 	}
 
-	.about-hero h1 span {
-		font-size: $step-10;
-		margin: 5px 0;
-		line-height: 1;
-	}
-}
-
-@media only screen and (max-width: 899px) {
-	.about-hero h1 {
-		flex-direction: column;
-	}
-}
-
-@media only screen and (max-width: 1300px) {
 	.intro {
-		flex-direction: column;
-		text-align: center;
-		img {
-			margin-right: 0;
-			width: 70%;
-			margin-bottom: 150px;
+		.intro-text {
+			text-align: left;
 		}
-	}
-	.intro-text {
-		margin-top: -100px;
-	}
-}
-
-@media only screen and (min-width: 599px) and (max-width: 1300px) {
-	.intro img {
-		width: 70%;
-	}
-	.intro-text {
-		margin-bottom: 100px;
 	}
 }
