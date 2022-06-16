@@ -1,4 +1,4 @@
-.cta-btn {
+.contact-btn {
 	position: fixed;
 	right: 6rem;
 	bottom: 2.2rem;
@@ -22,39 +22,28 @@
 	width: 100vw;
 	height: 80vh;
 	min-width: 100%;
-	box-shadow: rgba(0, 0, 0, 0.30) 0px 5px 20px;
+	box-shadow: rgba(0, 0, 0, 0.30) 0 5px 20px;
 	padding: $step-6;
 	margin: 0;
 	border-top-left-radius: 40px;
 	border-top-right-radius: 40px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	will-change: transform;
-	@include noise-background;
 	background-color: #eee;
 }
 
 #contact-close-button {
-	box-shadow: rgba(0, 0, 0, 0.1) 0px -5px 5px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0 -5px 5px;
 	position: absolute;
 	top: 0;
-	left: 50%;
 	transform: translate(-50%, -50%);
-	@include noise-background;
 	background-color: #eee;
-	border-radius: 200px;
-	padding: 2rem;
-	outline: none;
+	border-radius: 50%;
+	padding: 1rem;
 }
-
-// -------------------------------------------
 
 .contact-modal-content {
 	display: grid;
-	grid-template-columns: 1.5fr 1fr;
-	grid-template-rows: 1.25fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
 	max-width: 100%;
 	max-height: 100%;
 	width: 100%;
@@ -62,45 +51,30 @@
 	grid-gap: $step-3;
 }
 
-.contact-section {
-	width: 100%;
-	height: 100%;
-}
-
-.contact-heading-section {
-	padding: 1rem;
-}
-
+// Contact heading section
 .contact-heading-title {
-	font-family: "Have Heart One";
+	font-family: "Have Heart One", sans-serif;
 	text-transform: none;
 	font-weight: 400;
 	margin-bottom: 1rem;
 }
 
 .contact-heading-subtext {
-	opacity: 0.5;
+	color: #666;
 }
 
-.contact-form-section {
-	grid-row: 1 / -1;
-	grid-column: 2 / -1;
-}
-
+// Form section
 .contact-form {
 	@include center-content;
-	width: 100%;
-	height: 100%;
 }
 
 .input {
 	font-size: $step-1;
-	outline: none;
 	width: 100%;
-	height: 100%;
-	padding: 12px 12px 8px 20px;
+	padding: 0.7rem;
 	border-radius: 5px;
-	border: none;
+	border: 1px solid #666;
+	background: none;
 }
 
 .input:nth-child(-n+3) {
@@ -109,25 +83,29 @@
 
 .text-area {
 	resize: none;
-	min-height: 130px;
+	min-height: 150px;
 }
 
 .form-submit-btn {
-	background: #222;
+	font-size: $step-0;
+	background: #474747;
 	color: #eee;
-	font-size: $step-1;
 	font-family: $font-family-heading;
-  font-weight: 400;
-	-webkit-appearance: none;
 	transition: 0.3s;
 	cursor: pointer;
+	border: none;
+	padding: 0.7rem;
+	border-radius: 5px;
+	align-self: end;
 }
 
 .form-submit-btn:hover {
-	background: #555;
+	background: #171717;
 }
 
+// Contact info section
 .contact-info-section {
+	grid-column: 1 / -1;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
@@ -135,7 +113,7 @@
 }
 
 .contact-info-label {
-	opacity: 0.5;
+	color: #666;
 	font-size: $step-0;
 }
 
@@ -154,33 +132,50 @@
 	cursor: pointer;
 }
 
-// -------------------------------------------
-
+// Media queries
 @media screen and (max-width: 599px) {
-	#contact-modal,
-	.input,
-	.form-submit-button,
-	.contact-info-label {
+	.input {
 		font-size: 16px !important;
 	}
 
 	#contact-modal {
-	//	max-height: 70vh;
+		height: 85vh;
 	}
 
-	.cta-btn {
-		bottom: 2rem;
-		right: 2rem;
+	.contact-modal-content {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+		grid-gap: 0;
+	}
+
+	.contact-heading-section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.contact-heading-title {
+		margin-bottom: 0;
+	}
+
+	.contact-heading-subtext {
+		color: #666;
+		font-size: 16px;
 	}
 
 	.contact-info-section {
-	//	grid-template-columns: 1fr;
-	//	grid-template-rows: 1fr 1fr 1fr 1fr;
-	//	margin-bottom: 5rem;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		grid-gap: 10px;
 	}
 
 	.text-area {
 		min-height: 100px;
+	}
+
+	.form-submit-btn {
+		padding: 0.5rem;
+		font-size: 14px;
 	}
 
 	.contact-social-icons {
@@ -191,6 +186,11 @@
 	.contact-social-icons:nth-child(n+1) {
 		margin: 0 17px 0 0;
 	}
+
+	.contact-btn {
+		bottom: 2rem;
+		right: 2rem;
+	}
 }
 
 @media screen and (max-width: 899px) {
@@ -199,26 +199,10 @@
 	}
 
 	.contact-modal-content {
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 3fr 1fr;
-		grid-gap: $step-3;
-	}
-
-	.contact-heading-section {
-		text-align: center;
-	}
-
-	.contact-form-section {
-		grid-column: 1 / -1;
-		grid-row: 2 / 3;
 	}
 
 	.input {
 		font-size: $step-0;
-	}
-
-	.form-submit-btn {
-		padding: 1rem 0;
 	}
 
 	.contact-social-icons {
