@@ -6,21 +6,16 @@ import Thumbnail from "../components/selectedWorks/Thumbnail"
 
 export default function Works() {
 	const [thumbnails, setThumbnails] = useState([])
-
 	const thumbnailList = []
 	const minWidth = 30
 	const maxWidth = 60
-	const holder = useRef()
+	const holder = useRef(null)
 
 	const createThumbnail = () => {
-
-		const randWidth =
-			Math.floor(Math.random() * (maxWidth - minWidth + 1)) + minWidth
-		const randHeight = randWidth / 2
-
+		const randWidth = Math.floor(Math.random() * (maxWidth - minWidth + 1)) + minWidth
+		const randHeight = Math.floor(randWidth * 0.5625)
 		const pixelWidth = (document.documentElement.clientWidth * randWidth) / 100
-		const pixelHeight =
-			(document.documentElement.clientWidth * randHeight) / 100
+		const pixelHeight = (document.documentElement.clientWidth * randHeight) / 100
 
 		function getRandom(min, max) {
 			return Math.random() * (max - min) + min
@@ -39,7 +34,7 @@ export default function Works() {
 		let minDistanceY
 
 		let overlap = false
-		for (const i = 0; i < thumbnailList.length; i++) {
+		for (let i = 0; i < thumbnailList.length; i++) {
 			const other = thumbnailList[i]
 
 			if (other.pixelWidth > pixelWidth) {
@@ -85,7 +80,7 @@ export default function Works() {
 
 	return (
 		<MouseMoveScroll ref={holder}>
-			{thumbnails.length != 0 ? (
+			{thumbnails.length ? (
 				<Swing>
 					{thumbnails.map((thumbnail, i) => (
 						<Thumbnail

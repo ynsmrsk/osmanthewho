@@ -5,64 +5,52 @@ import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin"
 gsap.registerPlugin(MotionPathPlugin)
 
 export function Swing({ children }) {
-	// select wrapper of elements that will be animated
-	const wrapperRef = useRef()
-
-	// function to generate integers to use in the animations
-	function getRandom(min, max) {
-		return Math.floor(Math.random() * (max - min) + min)
-	}
+	const wrapperRef = useRef(null)
 
 	useEffect(() => {
 		const wrapper = wrapperRef.current
-
-		// grab elements
 		const elements = gsap.utils.toArray(wrapper.children)
 
-		// 1) swing animation for each element
-		elements.forEach((element) => {
-			const size = element.dataset.size
-			const randSize = 100 - size
-			gsap.to(element, {
+		elements.forEach((el) => {
+			const size = 100 - el.dataset.size
+			gsap.to(el, {
 				motionPath: {
 					path: [
-						{ x: -randSize / 1.5, y: 0 },
-						{ x: -randSize / 1.5, y: -randSize / 2 },
-						{ x: 0, y: -randSize / 2 },
+						{ x: -size / 1.5, y: 0 },
+						{ x: -size / 1.5, y: -size / 2 },
+						{ x: 0, y: -size / 2 },
 						{ x: 0, y: 0 },
 					],
 					curviness: 1,
 				},
-				duration: getRandom(size / 3, size / 2),
+				duration: gsap.utils.random(el.dataset.size / 3, el.dataset.size / 2),
+				delay: gsap.utils.random(0, 4),
 				ease: "none",
 				repeat: -1,
-				delay: getRandom(0, 4),
 			})
 		})
 
-		/*
-		// 2) mouse move parallax animation
-		const onMouseMove = (event) => {
-			const pageX = event.pageX - (wrapper.getBoundingClientRect().width * 0.5)
-			const pageY = event.pageY - (wrapper.getBoundingClientRect().height * 0.5)
-
-			elements.forEach(element => {
-
-				// element.dataset.size is an int between 30 - 60
-				const speedX = 100 - element.dataset.size
-				const speedY = 100 - element.dataset.size
-
-				gsap.to(element, {
-					x: -((element.offsetLeft + pageX * speedX) * 0.005) / 2,
-					y: -(element.offsetTop + pageY * speedY) * 0.005,
-					ease: "Expo.easeOut",
-					duration: 2
-				})
-
-			})
-		}
-		document.addEventListener("pointermove", onMouseMove)
-		*/
+		// // parallax pointermove
+		// const data = elements.map(el => {
+		// 	return {
+		// 		left: el.offsetLeft,
+		// 		top: el.offsetTop,
+		// 		speed: 100 - el.dataset.size,
+		// 		tween: gsap.to(el, {x: "+=0", y: "+=0", ease: "expo", duration: el.dataset.size * 0.05, paused: true})
+		// 	};
+		// });
+		// const onMouseMove = (event) => {
+		// 	let bounds = wrapper.getBoundingClientRect(),
+		// 		pageX = event.pageX - bounds.width * 0.5,
+		// 		pageY = event.pageY - bounds.height * 0.5;
+		//
+		// 	data.forEach(d => {
+		// 		d.tween.vars.x = -((d.left + pageX * d.speed) * 0.005) / 2;
+		// 		d.tween.vars.y = -(d.top + pageY * d.speed) * 0.005;
+		// 		d.tween.invalidate().restart();
+		// 	});
+		// };
+		// document.addEventListener("pointermove", onMouseMove)
 	}, [])
 
 	return <div ref={wrapperRef}>{children}</div>

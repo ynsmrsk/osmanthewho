@@ -5,7 +5,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export function TextReveal({ children }) {
-	const el = useRef()
+	const el = useRef(null)
 
 	useEffect(() => {
 		const duration = 0.7
@@ -18,25 +18,25 @@ export function TextReveal({ children }) {
 				ease: "none",
 				scrollTrigger: {
 					trigger: element,
-					start: "center center+=" + (offset / 1.5),
-					end: "center center-=" + (offset / 3),
+					start: "center center+=" + (offset / 2),
+					end: "center center-=" + (offset / 2),
 					onEnter: () => {
 						gsap.to(element, {
-							y: -55,
+							y: -50,
 							duration,
 							opacity: 1,
 						})
 					},
 					onLeave: () => {
 						gsap.to(element, {
-							y: -110,
+							y: -100,
 							duration,
 							opacity: 0
 						})
 					},
 					onEnterBack: () => {
 						gsap.to(element, {
-							y: -55,
+							y: -50,
 							duration,
 							opacity: 1
 						})

@@ -8,7 +8,7 @@ export default function Thumbnail({ randWidth, randHeight, randX, randY, title, 
 	const handleMouseOut = () => setFocus(false)
 
 	useEffect(() => {
-		if (focus == true) {
+		if (focus === true) {
 			video.current.play()
 		} else {
 			video.current.pause()

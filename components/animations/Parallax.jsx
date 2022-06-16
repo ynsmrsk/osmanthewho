@@ -6,13 +6,14 @@ gsap.registerPlugin(ScrollTrigger)
 
 // Parallax animation
 export function Parallax({ children }) {
-	const el = useRef()
+	const el = useRef(null)
 
 	useEffect(() => {
 		const animations = []
 		const elements = gsap.utils.toArray(el.current.children)
 		elements.forEach(element => {
 			const movement = -(element.offsetHeight * element.dataset.speed)
+			// noinspection JSCheckFunctionSignatures
 			const animation = gsap.timeline({
 				scrollTrigger: {
 					trigger: element,
