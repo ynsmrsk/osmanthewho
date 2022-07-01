@@ -2,7 +2,7 @@
   @include center-content;
 	min-height: 100vh;
 	margin-top: 40px;
-	margin-bottom: 7vw;
+	margin-bottom: 10vw;
 }
 
 .about-hero h1 {
@@ -19,10 +19,10 @@
 }
 
 .about-photo {
-	margin-bottom: 7vw;
+	margin-bottom: 10vw;
 	position: relative;
-	background: darkorange;
 	img {
+		width: 100%;
 		object-fit: cover;
 		display: block;
 	}
@@ -44,7 +44,7 @@
 }
 
 .intro {
-	margin-bottom: 7vw;
+	margin-bottom: 15vw;
 	.intro-text {
 		text-align: center;
 		a {

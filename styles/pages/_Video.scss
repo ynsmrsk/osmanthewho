@@ -1,0 +1,40 @@
+.videoSection {
+  width: 100%;
+  height: 100vh;
+  @include center-content;
+}
+
+.closeButton {
+  padding: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: larger;
+  margin-bottom: 1rem;
+}
+
+.videoHeading {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.video {
+  max-width: 100%;
+}
+
+@media (min-width: 899px) {
+  .videoHeadingTitle::after {
+    content: "⸻";
+  }
+
+  .video {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 899px) {
+  .videoHeading {
+    flex-direction: column;
+  }
+
+}

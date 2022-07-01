@@ -51,6 +51,11 @@
 .item img {
 	width: 100%;
 	height: auto;
+	transition: 0.7s;
+}
+
+.item img:hover {
+	filter: brightness(60%);
 }
 
 .item span {
@@ -71,9 +76,7 @@
 }
 
 .view-more-btn:hover {
-	background: rgba(0, 0, 0, 0.9);
 	letter-spacing: 3px;
-	color: $white;
 }
 
 @media screen and (max-width: 599px) {

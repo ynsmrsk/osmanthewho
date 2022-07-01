@@ -11,6 +11,9 @@ export function Swing({ children }) {
 		const wrapper = wrapperRef.current
 		const elements = gsap.utils.toArray(wrapper.children)
 
+		console.log("before toArray", wrapper.children)
+		console.log("after toArray", elements)
+
 		elements.forEach((el) => {
 			const size = 100 - el.dataset.size
 			gsap.to(el, {

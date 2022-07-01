@@ -24,12 +24,11 @@ export default function Home() {
 
 	const [open, setOpen] = useState(false)
 
-	const plus = useRef()
-	const overlay = useRef()
+	const plus = useRef(null)
+	const overlay = useRef(null)
 	useEffect(() => {
 		gsap.to(plus.current, {
 			scale: 100,
-			//force3D: false,
 			scrollTrigger: {
 				trigger: overlay.current,
 				start: "top top",
@@ -63,8 +62,8 @@ export default function Home() {
 				<div className="landing-content">
 					<div className="landing-content-title-container">
 						 <h1 className="landing-content-title">
-							  <span className="title-word">stay</span>
-							  <span className="title-word">wild</span>
+							 <span className="title-word">stay</span>
+							 <span className="title-word">wild</span>
 						 </h1>
 						 <h1 className="landing-content-title">
 							  <span className="title-word">have</span>
@@ -230,17 +229,23 @@ export default function Home() {
 
 			<section className="brands">
 				<FadeIn>
-					<p>
+					<h4>
 						I've worked with great artists and brands. There is love for them
 						all.
-					</p>
+					</h4>
+					<hr />
 				</FadeIn>
 				<FadeInStagger>
-					<img src="/images/brands/samsung.png" alt="Samsung" />
-					<img src="/images/brands/trt.png" alt="TRT" />
-					<img src="/images/brands/altinpusula.png" alt="Altın Pusula" />
-					<img src="/images/brands/aydindogan.png" alt="Aydın Doğan Vakfı" />
-					<img src="/images/brands/yildizholding.png" alt="Yıldız Holding" />
+					 <div className="brand-image"><img src="/images/brands/xiaomi.png" alt="Xiaomi" /></div>
+					 <div className="brand-image"><img src="/images/brands/coca-cola.png" alt="Coca Cola" /></div>
+					 <div className="brand-image"><img src="/images/brands/red-bull.png" alt="Red Bull" /></div>
+					 <div className="brand-image"><img src="/images/brands/corona.png" alt="Corona" /></div>
+					 <div className="brand-image"><img src="/images/brands/tefal.png" alt="Tefal" /></div>
+					 <div className="brand-image"><img src="/images/brands/samsung.png" alt="Samsung" /></div>
+					 <div className="brand-image"><img src="/images/brands/trt.png" alt="TRT" /></div>
+					 <div className="brand-image"><img src="/images/brands/altin-pusula.png" alt="Altın Pusula" /></div>
+					 <div className="brand-image"><img src="/images/brands/aydin-dogan.png" alt="Aydın Doğan Vakfı" /></div>
+					 <div className="brand-image"><img src="/images/brands/yildiz-holding.png" alt="Yıldız Holding" /></div>
 				</FadeInStagger>
 			</section>
 

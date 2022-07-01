@@ -18,7 +18,7 @@ export default function About() {
 			<section className="about-photo full-bleed">
 				<div className="about-linear-gradient-div-top"></div>
 				<div className="about-linear-gradient-div-bottom"></div>
-				<img src="/images/osman.jpeg" alt="Osman Işık" />
+				<img src="/images/osman-black-white.jpg" alt="Osman Işık" />
 			</section>
 
 			<section className="intro">
@@ -28,13 +28,11 @@ export default function About() {
 						  through an optimistic lens.
 					  </p>
 					  <p>
-						  I'm Osman Işık. I'm a filmmaker, photographer, designer and director
-						  in Turkey. I produce commercial videos and social media content for brands.
-						  You can visit my{" "}
-						  <a href="https://www.instagram.com/osmanthewho" target="_blank">
-							  Instagram
-						  </a>{" "}
-						  account to see my jobs. I'm available for freelance work.
+						  My name is Osman. I'm a video creator based in Turkey.
+						  I work directly with clients from concept to final delivery.
+						  Each project is produced through me and my team.
+						  We create stylized and engaging content for brands, events, and celebrities.
+						  Hit me up if you wanna collaborate!
 					  </p>
 				 </div>
 			</section>

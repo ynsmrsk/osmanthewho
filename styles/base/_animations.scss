@@ -27,3 +27,8 @@ $reveal-reverse: reveal-reverse 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     transform: translate(0,0);
   }
 }
+
+.noise-background {
+  background: url("../../public/images/noise.png");
+  animation: noise;
+}

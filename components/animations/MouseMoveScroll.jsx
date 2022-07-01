@@ -39,14 +39,14 @@ const MouseMoveScroll = forwardRef(({ children }, holder) => {
 		}
 
 		window.addEventListener("resize", onResize)
-		document.addEventListener("pointermove", onMouseMove)
+		document.addEventListener("mousemove", onMouseMove)
 		onResize()
 	}, [])
 
 	return (
-		<div style={styles.wrapper}>
+		<div className="full-bleed" style={styles.wrapper}>
 			<div style={styles.container}>
-				<div style={styles.holder} ref={holder}>
+				<div className="noise-background" style={styles.holder} ref={holder}>
 					{children}
 				</div>
 			</div>
@@ -58,8 +58,8 @@ const styles = {
 	wrapper: {
 		width: "100vw",
 		height: "100vh",
-		overflow: "hidden",
 		position: "relative",
+		overflow: "hidden",
 	},
 	container: {
 		position: "absolute",
@@ -68,8 +68,8 @@ const styles = {
 		transform: "translate(-50%,-50%)",
 	},
 	holder: {
-		width: "170vw",
-		height: "400vh",
+		width: "200vw",
+		height: "450vh",
 		willChange: "transform",
 	},
 }

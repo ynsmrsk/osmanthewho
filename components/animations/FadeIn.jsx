@@ -5,13 +5,12 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export function FadeIn ({ children }) {
-  let el = useRef()
+  let el = useRef(null)
 
   useEffect(() => {
     gsap.from(el.current, {
-			y: 15,
-			skewY: 1,
-			duration: 1.5,
+			y: 25,
+			duration: 1,
       autoAlpha: 0,
 			scrollTrigger: {
 				trigger: el.current,
@@ -25,7 +24,7 @@ export function FadeIn ({ children }) {
 }
 
 export function FadeInStagger({ children }) {
-  const el = useRef()
+  const el = useRef(null)
 
   useEffect(() => {
 		gsap.timeline({

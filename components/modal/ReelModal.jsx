@@ -18,7 +18,7 @@ export default function ReelModal({ open, setOpen }) {
         }}
 			>
 				<ReactPlayer
-					url="https://vimeo.com/331442093"
+					url="https://vimeo.com/322292242"
 					playing
 					controls
 					width="100%"

@@ -1,41 +1,42 @@
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4, h5 {
 	font-family: $font-family-heading-bold;
 	line-height: $line-height-sm;
 	letter-spacing: $letter-spacing-md;
 	text-transform: uppercase;
 }
 
-@media screen and (max-width: 599px) {
+@media (max-width: 599px) {
 	h1 { font-size: $step-10; }
 	h2 { font-size: $step-8; }
 	h3 { font-size: $step-6; }
 	h4 { font-size: $step-5; }
+	h5 { font-size: $step-3; }
 	p	 { font-size: $step-1; }
 }
 
-@media screen and (min-width: 600px) and (max-width: 899px) {
+@media (min-width: 600px) and (max-width: 899px) {
 	h1 { font-size: $step-10; }
 	h2 { font-size: $step-8; }
 	h3 { font-size: $step-6; }
 	h4 { font-size: $step-5; }
+	h5 { font-size: $step-3; }
 	p	 { font-size: $step-1; }
 }
 
-@media screen and (min-width: 900px) and (max-width: 1439px) {
+@media (min-width: 900px) and (max-width: 1439px) {
 	h1 { font-size: $step-9; }
 	h2 { font-size: $step-7; }
 	h3 { font-size: $step-5; }
 	h4 { font-size: $step-4; }
+	h5 { font-size: $step-2; }
 	p	 { font-size: $step-2; }
 }
 
-@media screen and (min-width: 1440px) {
+@media (min-width: 1440px) {
 	h1 { font-size: $step-9; }
 	h2 { font-size: $step-7; }
 	h3 { font-size: $step-5; }
 	h4 { font-size: $step-4; }
+	h5 { font-size: $step-2; }
 	p	 { font-size: $step-2; }
 }
