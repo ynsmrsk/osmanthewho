@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState, useRef } from 'react'
-import { getThumbnailImage, getThumbnailVideo } from "../../utils/get-files";
+import { getThumbnailImage, getThumbnailVideo } from "utils/get-files";
 
 export default function Thumbnail({videoName, width, height, x, y}) {
     const video = useRef(null)

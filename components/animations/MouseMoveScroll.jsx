@@ -24,10 +24,8 @@ const MouseMoveScroll = forwardRef(({ children }, holder) => {
 
 		function onMouseMove(e) {
 			if (overflowX > 0 || overflowY > 0) {
-				let x =
-					e.clientX || (e.changedTouches && e.changedTouches[0].clientX) || 0
-				let y =
-					e.clientY || (e.changedTouches && e.changedTouches[0].clientY) || 0
+				let x = e.clientX || (e.changedTouches && e.changedTouches[0].clientX) || 0
+				let y = e.clientY || (e.changedTouches && e.changedTouches[0].clientY) || 0
 				gsap.to(holder.current, {
 					duration: 7,
 					overwrite: true,
@@ -44,9 +42,9 @@ const MouseMoveScroll = forwardRef(({ children }, holder) => {
 	}, [])
 
 	return (
-		<div className="full-bleed" style={styles.wrapper}>
-			<div style={styles.container}>
-				<div className="noise-background" style={styles.holder} ref={holder}>
+		<div className="noise-background" className="full-bleed" style={styles.wrapper}>
+			<div className="noise-background" style={styles.container}>
+				<div style={styles.holder} ref={holder}>
 					{children}
 				</div>
 			</div>
@@ -60,6 +58,7 @@ const styles = {
 		height: "100vh",
 		position: "relative",
 		overflow: "hidden",
+		backgroundColor: "#080808"
 	},
 	container: {
 		position: "absolute",

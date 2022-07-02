@@ -1,6 +1,6 @@
 import 'react-responsive-modal/styles.css'
 import { Modal } from 'react-responsive-modal'
-import VideoPlayer from "../videoPlayer/VideoPlayer"
+import VideoPlayer from "components/videoPlayer/VideoPlayer"
 
 export default function VideoModal({ open, setOpen, url, title }) {
 	return (

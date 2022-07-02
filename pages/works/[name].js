@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
-import supabase from "../../utils/supabase";
-import { getVideo } from "../../utils/get-files";
-import Layout from "../../components/constants/Layout";
+import supabase from "utils/supabase";
+import { getVideo } from "utils/get-files";
+import Layout from "components/constants/Layout";
 
 export default function Video({ video }) {
     const router = useRouter();

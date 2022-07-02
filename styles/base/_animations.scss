@@ -1,4 +1,5 @@
 $noise: noise 1s steps(20) infinite;
+
 @keyframes noise {
 	0% {
 		background-position: 0 0;
@@ -30,5 +31,6 @@ $reveal-reverse: reveal-reverse 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
 
 .noise-background {
   background: url("../../public/images/noise.png");
-  animation: noise;
+  animation: noise 1s steps(20) infinite;
 }
+

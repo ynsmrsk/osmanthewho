@@ -1,9 +1,9 @@
-import supabase from "../../utils/supabase";
-import { useEffect, useRef, useState } from "react";
-import Thumbnail from "../../components/videos/Thumbnail";
-import { MouseMoveScroll } from "../../components/animations/MouseMoveScroll";
-import { Swing } from "../../components/animations/Swing";
-import Layout from "../../components/constants/Layout";
+import supabase from "utils/supabase"
+import { useEffect, useRef, useState } from "react"
+import Thumbnail from "components/videos/Thumbnail"
+import { MouseMoveScroll } from "components/animations/MouseMoveScroll"
+import { Swing } from "components/animations/Swing"
+import Layout from "components/constants/Layout"
 
 export default function Videos({ videos }) {
     const [thumbnails, setThumbnails] = useState([])

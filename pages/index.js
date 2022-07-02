@@ -1,17 +1,14 @@
 import { useState, useEffect, useRef } from "react"
 import Head from "next/head"
 import Image from "next/image"
-import Layout from "../components/constants/Layout"
-import Productions from "../components/productions/Productions"
-import {
-	TextReveal,
-	TextRevealPinned,
-} from "../components/animations/TextReveal"
-import { Parallax, ParallaxOverflow } from "../components/animations/Parallax"
-import { FadeIn, FadeInStagger } from "../components/animations/FadeIn"
+import Layout from "components/constants/Layout"
+import Productions from "components/productions/Productions"
+import { TextReveal, TextRevealPinned } from "components/animations/TextReveal"
+import { Parallax, ParallaxOverflow } from "components/animations/Parallax"
+import { FadeIn, FadeInStagger } from "components/animations/FadeIn"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
-import ReelModal from "../components/modal/ReelModal"
+import ReelModal from "components/modal/ReelModal"
 
 gsap.registerPlugin(ScrollTrigger)
 export default function Home() {

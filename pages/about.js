@@ -1,5 +1,5 @@
 import Head from "next/head"
-import Layout from "../components/constants/Layout"
+import Layout from "components/constants/Layout"
 
 export default function About() {
 	return (

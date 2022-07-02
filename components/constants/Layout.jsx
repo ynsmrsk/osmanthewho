@@ -1,9 +1,9 @@
 import Head from "next/head"
-import Navigation from "../header/navigation/Navigation"
-import Logo from "../header/logo/Logo"
-import Footer from "../footer/Footer"
-import Fullscreen from "../fullscreen/Fullscreen"
-import ContactModal from "../modal/ContactModal"
+import Navigation from "components/header/navigation/Navigation"
+import Logo from "components/header/logo/Logo"
+import Footer from "components/footer/Footer"
+import Fullscreen from "components/fullscreen/Fullscreen"
+import ContactModal from "components/modal/ContactModal"
 
 export default function Layout({ children }) {
 	return (
