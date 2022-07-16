@@ -3,7 +3,10 @@ import { useEffect, useRef, useState } from "react"
 import Thumbnail from "components/videos/Thumbnail"
 import { MouseMoveScroll } from "components/animations/MouseMoveScroll"
 import { Swing } from "components/animations/Swing"
-import Layout from "components/constants/Layout"
+import Head from "next/head"
+import Navigation from "components/header/navigation/Navigation"
+import Logo from "components/header/logo/Logo"
+import ContactModal from "components/modal/ContactModal"
 
 export default function Videos({ videos }) {
     const [thumbnails, setThumbnails] = useState([])
@@ -19,8 +22,8 @@ export default function Videos({ videos }) {
         viewportHeight = randomViewportWidth / aspectRatio
         pixelWidth = (document.documentElement.clientWidth * randomViewportWidth) / 100
         pixelHeight = (document.documentElement.clientWidth * viewportHeight) / 100
-        randomX = getRandomBetween(pixelWidth / 2, holder.current.offsetWidth - pixelWidth * 1.5)
-        randomY = getRandomBetween(pixelHeight / 1.5, holder.current.offsetHeight - pixelHeight * 2)
+        randomX = getRandomBetween(pixelWidth / 1.5, holder.current.offsetWidth - pixelWidth * 1.5)
+        randomY = getRandomBetween(pixelHeight / 1.25, holder.current.offsetHeight - pixelHeight * 2)
     }
     const checkIfOverlap = () => {
         for (let i = 0; i < thumbnailList.length; i++) {
@@ -44,13 +47,11 @@ export default function Videos({ videos }) {
         thumbnailList.push({ videoName, randomViewportWidth, viewportHeight, randomX, randomY })
         return true
     }
-
     const generateThumbnail = (video) => {
         videoName = video.name
         aspectRatio = video.pixel_width / video.pixel_height
         do {
             protect++
-            //console.log(protect)
             generateRandomSizeAndPosition(aspectRatio)
             if (protect > 10000) return
         } while (!checkIfOverlap())
@@ -61,29 +62,35 @@ export default function Videos({ videos }) {
             generateThumbnail(video)
         })
         setThumbnails(thumbnailList)
+        console.log("thumbnails:", thumbnailList.length)
     }, [])
 
     return (
-        <div>
-            <Layout>
-                <MouseMoveScroll ref={holder}>
-                    {thumbnails.length ? (
-                        <Swing>
-                            {thumbnails.map((thumbnail, i) =>
-                                <Thumbnail
-                                    key={i}
-                                    videoName={thumbnail.videoName}
-                                    width={thumbnail.randomViewportWidth}
-                                    height={thumbnail.viewportHeight}
-                                    x={thumbnail.randomX}
-                                    y={thumbnail.randomY}
-                                />
-                            )}
-                        </Swing>
-                    ) : null}
-                </MouseMoveScroll>
-            </Layout>
-        </div>
+        <>
+            <Head>
+                <title>Osman Işık | Works</title>
+                <link rel="icon" href="/images/favicon.ico" />
+            </Head>
+            <Logo />
+            <Navigation />
+            <MouseMoveScroll ref={holder}>
+                {thumbnails.length && (
+                    <Swing>
+                        {thumbnails.map((thumbnail, i) =>
+                            <Thumbnail
+                                key={i}
+                                videoName={thumbnail.videoName}
+                                width={thumbnail.randomViewportWidth}
+                                height={thumbnail.viewportHeight}
+                                x={thumbnail.randomX}
+                                y={thumbnail.randomY}
+                            />
+                        )}
+                    </Swing>
+                )}
+            </MouseMoveScroll>
+            <ContactModal />
+        </>
     )
 }
 

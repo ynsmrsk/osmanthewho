@@ -58,14 +58,14 @@ export default function Home() {
 
 				<div className="landing-content">
 					<div className="landing-content-title-container">
-						 <h1 className="landing-content-title">
-							 <span className="title-word">stay</span>
-							 <span className="title-word">wild</span>
-						 </h1>
-						 <h1 className="landing-content-title">
-							  <span className="title-word">have</span>
-							  <span className="title-word">move</span>
-						 </h1>
+						<h1 className="landing-content-title">
+							<span className="title-word">stay</span>
+							<span className="title-word">wild</span>
+						</h1>
+						<h1 className="landing-content-title">
+							<span className="title-word">have</span>
+							<span className="title-word">move</span>
+						</h1>
 					</div>
 					<ReelModal open={open} setOpen={setOpen} />
 					<button className="watch-showreel-btn" onClick={() => setOpen(true)}>
@@ -75,20 +75,20 @@ export default function Home() {
 			</section>
 
 			<section className="self-intro">
-				 <TextReveal>
-					  <p>
-						  I promote living life to the fullest and <br />
-						  seeing the world through an optimistic lens.
-					  </p>
-					  <p>
-						  I'm Osman. I'm a filmmaker, photographer, <br />
-						  designer and director in Turkey.
-					  </p>
-					  <p>
-						  I produce creative contents for brands. <br />
-						  Hit me up to collaboration!
-					  </p>
-				 </TextReveal>
+				<TextReveal>
+					<p>
+						I promote living life to the fullest and <br />
+						seeing the world through an optimistic lens.
+					</p>
+					<p>
+						My name is Osman. I'm a video creator based in Turkey.
+						I work directly with clients from concept to final delivery.
+					</p>
+					<p>
+						We create stylized and engaging content for brands,
+						events, and celebrities. Hit me up if you wanna collaborate!
+					</p>
+				</TextReveal>
 			</section>
 
 			<section className="skills">
@@ -233,16 +233,16 @@ export default function Home() {
 					<hr />
 				</FadeIn>
 				<FadeInStagger>
-					 <div className="brand-image"><img src="/images/brands/xiaomi.png" alt="Xiaomi" /></div>
-					 <div className="brand-image"><img src="/images/brands/coca-cola.png" alt="Coca Cola" /></div>
-					 <div className="brand-image"><img src="/images/brands/red-bull.png" alt="Red Bull" /></div>
-					 <div className="brand-image"><img src="/images/brands/corona.png" alt="Corona" /></div>
-					 <div className="brand-image"><img src="/images/brands/tefal.png" alt="Tefal" /></div>
-					 <div className="brand-image"><img src="/images/brands/samsung.png" alt="Samsung" /></div>
-					 <div className="brand-image"><img src="/images/brands/trt.png" alt="TRT" /></div>
-					 <div className="brand-image"><img src="/images/brands/altin-pusula.png" alt="Altın Pusula" /></div>
-					 <div className="brand-image"><img src="/images/brands/aydin-dogan.png" alt="Aydın Doğan Vakfı" /></div>
-					 <div className="brand-image"><img src="/images/brands/yildiz-holding.png" alt="Yıldız Holding" /></div>
+					<div className="brand-image"><img src="/images/brands/colored/xiaomi.png" alt="Xiaomi" /></div>
+					<div className="brand-image"><img src="/images/brands/colored/coca-cola.png" alt="Coca Cola" /></div>
+					<div className="brand-image"><img src="/images/brands/colored/red-bull.png" alt="Red Bull" /></div>
+					<div className="brand-image"><img src="/images/brands/colored/corona.png" alt="Corona" /></div>
+					<div className="brand-image"><img src="/images/brands/colored/tefal.png" alt="Tefal" /></div>
+					<div className="brand-image"><img src="/images/brands/colored/samsung.png" alt="Samsung" /></div>
+					<div className="brand-image"><img src="/images/brands/colored/trt.png" alt="TRT" /></div>
+					<div className="brand-image"><img src="/images/brands/colored/altin-pusula.png" alt="Altın Pusula" /></div>
+					<div className="brand-image"><img src="/images/brands/colored/aydin-dogan.png" alt="Aydın Doğan Vakfı" /></div>
+					<div className="brand-image"><img src="/images/brands/colored/spx.png" alt="SPX" /></div>
 				</FadeInStagger>
 			</section>
 

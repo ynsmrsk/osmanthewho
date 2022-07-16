@@ -33,7 +33,7 @@ export default function Productions() {
 			viewMoreRef.current.style.display = "none"
 	}, [itemsPerPage, data])
 
-	const list = [
+	const videoTypes = [
 		{
 			id: "all",
 			title: "All"
@@ -81,7 +81,7 @@ export default function Productions() {
 			</FadeIn>
 
 			<ul>
-				{list.map(item => (
+				{videoTypes.map(item => (
 					<ProductionList
 						key={item.id}
 						id={item.id}
@@ -98,18 +98,18 @@ export default function Productions() {
 			<VideoModal open={open} setOpen={setOpen} url={url} title={title} />
 
 			<div className="production-list-container">
-				{slice.map(d => (
+				{slice.map((data, index) => (
 					<div
-						key={d.id}
+						key={index}
 						className="item"
 						onClick={() => {
 							setOpen(true)
-							setUrl(d.url)
-							setTitle(d.title)
+							setUrl(data.url)
+							setTitle(data.title)
 						}}
 					>
-						<img src={d.img} />
-						<span>{d.title}</span>
+						<img src={data.img} />
+						<span>{data.title}</span>
 					</div>
 				))}
 			</div>

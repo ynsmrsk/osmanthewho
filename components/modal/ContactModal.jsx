@@ -6,10 +6,10 @@ export default function ContactModal() {
 	const [open, setOpen] = useState(false)
 	const closeIcon = (
 		<svg width="24" height="24" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path d="M19.2002 15L0.000198364 -8.39259e-07L10.1055 15L0.000197053 30L19.2002 15Z" fill="#070F17"/>
-			<path d="M10.7998 15L29.9998 30L19.8945 15L29.9998 2.28958e-07L10.7998 15Z" fill="#070F17"/>
+			<path d="M19.2002 15L0.000198364 -8.39259e-07L10.1055 15L0.000197053 30L19.2002 15Z" fill="#070F17" />
+			<path d="M10.7998 15L29.9998 30L19.8945 15L29.9998 2.28958e-07L10.7998 15Z" fill="#070F17" />
 		</svg>
-  );
+	);
 
 	return (
 		<>
@@ -21,17 +21,17 @@ export default function ContactModal() {
 				closeIconId="contact-close-button"
 				modalId="contact-modal"
 				styles={{
-          overlay: {
-            background: "none",
-          }
-        }}
+					overlay: {
+						background: "none",
+					}
+				}}
 				classNames={{
-          overlayAnimationIn: 'customEnterOverlayAnimation',
-          overlayAnimationOut: 'customLeaveOverlayAnimation',
-          modalAnimationIn: 'customEnterModalAnimation',
-          modalAnimationOut: 'customLeaveModalAnimation',
-        }}
-        animationDuration={1000}
+					overlayAnimationIn: 'customEnterOverlayAnimation',
+					overlayAnimationOut: 'customLeaveOverlayAnimation',
+					modalAnimationIn: 'customEnterModalAnimation',
+					modalAnimationOut: 'customLeaveModalAnimation',
+				}}
+				animationDuration={1000}
 			>
 				<div className="contact-modal-content">
 					<div className="contact-heading-section">
@@ -42,12 +42,12 @@ export default function ContactModal() {
 					</div>
 
 					<div className="contact-form-section">
-					<form name="contact" className="contact-form" method="post" action="">
-						<input className="input" type="text" name="name" placeholder="Name" />
-						<input className="input" type="text" name="email" placeholder="Email" />
-						<textarea className="input text-area" name="message" placeholder="Message"></textarea>
-						<button className="form-submit-btn" type="submit">Submit</button>
-					</form>
+						<form name="contact" className="contact-form" method="post" action="">
+							<input className="input" type="text" name="name" placeholder="Name" />
+							<input className="input" type="text" name="email" placeholder="Email" />
+							<textarea className="input text-area" name="message" placeholder="Message"></textarea>
+							<button className="form-submit-btn" type="submit">Submit</button>
+						</form>
 					</div>
 
 					<div className="contact-info-section">
@@ -77,9 +77,6 @@ export default function ContactModal() {
 								</a>
 								<a target="_blank" href="https://youtube.com/osmanthewho">
 									<img className="contact-social-icons" src="/icons/social/youtube.svg" alt="YouTube" />
-								</a>
-								<a target="_blank" href="https://www.behance.net/osmanthewho">
-									<img className="contact-social-icons" src="/icons/social/behance.svg" alt="Behance" />
 								</a>
 								<a target="_blank" href="https://vimeo.com/osmanthewho/">
 									<img className="contact-social-icons" src="/icons/social/vimeo.svg" alt="Vimeo" />

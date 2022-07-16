@@ -216,6 +216,13 @@
 		.brand-image {
 			max-width: 170px;
 			max-height: 170px;
+			position: relative;
+			filter: grayscale(1);
+			transition: 0.3s;
+
+			&:hover {
+				filter: grayscale(0);
+			}
 
 			img {
 				width: 80%;
@@ -254,10 +261,10 @@
 
 // Media queries
 @media screen and (max-width: 899px) {
-  .watch-showreel-btn {
-	  font-size: 12px;
-	  padding: 0.6rem 1.2rem;
-  }
+	.watch-showreel-btn {
+		font-size: 12px;
+		padding: 0.6rem 1.2rem;
+	}
 
 	.brands {
 		margin-top: 15rem;
@@ -336,11 +343,11 @@
 		right: 10%;
 	}
 
-#img-wrapper_2-4 {
-	width: clamp(200px, 20vw, 640px);
-	top: 85%;
-	right: 0;
-}
+	#img-wrapper_2-4 {
+		width: clamp(200px, 20vw, 640px);
+		top: 85%;
+		right: 0;
+	}
 
 	#img-wrapper_3-1 {
 		width: clamp(180px, 25vw, 480px);

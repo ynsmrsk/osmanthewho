@@ -19,9 +19,6 @@ export default function Footer() {
 					<a target="_blank" href="https://youtube.com/osmanthewho">
 						<img src="/icons/social/youtube.svg" alt="YouTube" />
 					</a>
-					<a target="_blank" href="https://www.behance.net/osmanthewho">
-						<img src="/icons/social/behance.svg" alt="Behance" />
-					</a>
 					<a target="_blank" href="https://vimeo.com/osmanthewho/">
 						<img src="/icons/social/vimeo.svg" alt="Vimeo" />
 					</a>

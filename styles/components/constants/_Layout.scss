@@ -3,7 +3,7 @@
 	grid-template-columns: 1fr min(85%, calc(100% - 1rem)) 1fr;
 }
 
-.layout-container > * {
+.layout-container>* {
 	grid-column: 2;
 }
 

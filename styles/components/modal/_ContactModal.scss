@@ -139,7 +139,7 @@
 	}
 
 	#contact-modal {
-		height: 85vh;
+		height: 80vh;
 	}
 
 	.contact-modal-content {
@@ -198,8 +198,7 @@
 		padding: 1rem;
 	}
 
-	.contact-modal-content {
-	}
+	.contact-modal-content {}
 
 	.input {
 		font-size: $step-0;
@@ -214,18 +213,21 @@
 // -------------------------------------------
 
 @keyframes customEnterModalAnimation {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+	0% {
+		transform: translateY(100%);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
 }
+
 @keyframes customLeaveModalAnimation {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(110%);
-  }
+	0% {
+		transform: translateY(0);
+	}
+
+	100% {
+		transform: translateY(110%);
+	}
 }

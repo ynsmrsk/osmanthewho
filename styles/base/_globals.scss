@@ -1,12 +1,12 @@
 html,
 body {
-	scrollbar-width: none; /* firefox */
 	color: $white;
-	overflow-x: hidden;
+	scrollbar-width: none;
 	user-select: none;
-	overscroll-behavior-y: none;
+	overflow-x: hidden;
+	overscroll-behavior-y: contain;
 	text-rendering: optimizeLegibility;
-	font-smoothing: antialiased;
+	font-smooth: antialiased;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-family: $font-family-main;
@@ -14,7 +14,6 @@ body {
 	line-height: $line-height-md;
 	background-color: $black;
 }
-
 
 a {
 	color: $white;

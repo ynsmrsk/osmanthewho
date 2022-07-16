@@ -2,19 +2,25 @@ import Link from "next/link";
 import { useEffect, useState, useRef } from 'react'
 import { getThumbnailImage, getThumbnailVideo } from "utils/get-files";
 
-export default function Thumbnail({videoName, width, height, x, y}) {
+export default function Thumbnail({ videoName, width, height, x, y }) {
     const video = useRef(null)
     const [focus, setFocus] = useState(false)
 
     useEffect(() => {
+        let playPromise = video.current.play()
+
         if (focus) video.current.play()
         else {
-            video.current.pause()
-            video.current.load()
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    video.current.pause()
+                    video.current.load()
+                }).catch(error => console.log(error))
+            }
         }
     }, [focus])
 
-    const styles =  {
+    const styles = {
         width: `${width}vw`,
         height: `${height}vw`,
         left: `${x}px`,
