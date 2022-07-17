@@ -7,15 +7,11 @@ export default function Thumbnail({ videoName, width, height, x, y }) {
     const [focus, setFocus] = useState(false)
 
     useEffect(() => {
-        let playPromise = video.current.play()
-
-        if (focus) video.current.play()
-        else {
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    video.current.pause()
-                    video.current.load()
-                }).catch(error => console.log(error))
+        if (window.innerWidth > 768) {
+            if (focus) video.current.play()
+            else {
+                video.current.pause()
+                video.current.load()
             }
         }
     }, [focus])
