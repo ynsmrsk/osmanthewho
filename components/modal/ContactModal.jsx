@@ -17,6 +17,16 @@ export default function ContactModal() {
 	const form = useRef(null)
 	const sendEmail = (e) => {
 		e.preventDefault()
+
+		let inputName = document.forms["contact_form"].elements["user_name"].value
+		let inputEmail = document.forms["contact_form"].elements["user_email"].value
+		let inputMessage = document.forms["contact_form"].elements["message"].value
+
+		if (inputName === "" || inputEmail === "" || inputMessage === "") {
+			alert("Please fill all the fields")
+			return
+		}
+
 		emailjs.sendForm(
 			process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID,
 			process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID,
@@ -30,6 +40,7 @@ export default function ContactModal() {
 			});
 		form.current.reset()
 	}
+
 
 	return (
 		<>
@@ -62,7 +73,7 @@ export default function ContactModal() {
 					</div>
 
 					<div className="contact-form-section">
-						<form ref={form} onSubmit={sendEmail} className="contact-form">
+						<form ref={form} onSubmit={sendEmail} className="contact-form" name="contact_form">
 							<input className="input" type="text" name="user_name" placeholder="Name" />
 							<input className="input" type="email" name="user_email" placeholder="Email" />
 							<textarea className="input text-area" name="message" placeholder="Message"></textarea>
