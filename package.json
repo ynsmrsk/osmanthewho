@@ -8,6 +8,7 @@
 		"start": "next start"
 	},
 	"dependencies": {
+		"@emailjs/browser": "^3.6.2",
 		"@supabase/supabase-js": "^1.35.3",
 		"framer-motion": "^6.2.8",
 		"gsap": "^3.9.1",

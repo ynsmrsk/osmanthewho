@@ -1,6 +1,7 @@
 import 'react-responsive-modal/styles.css'
 import { Modal } from 'react-responsive-modal'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser';
 
 export default function ContactModal() {
 	const [open, setOpen] = useState(false)
@@ -10,6 +11,25 @@ export default function ContactModal() {
 			<path d="M10.7998 15L29.9998 30L19.8945 15L29.9998 2.28958e-07L10.7998 15Z" fill="#070F17" />
 		</svg>
 	);
+
+	const a = "gmail_yunus-emre", b = "template_osman-contact", c = "y5o7tye_4QLneT6U_"
+
+	const form = useRef(null)
+	const sendEmail = (e) => {
+		e.preventDefault()
+		emailjs.sendForm(
+			process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID,
+			process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID,
+			form.current,
+			process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
+		)
+			.then((result) => {
+				console.log(result.text);
+			}, (error) => {
+				console.log(error.text);
+			});
+		form.current.reset()
+	}
 
 	return (
 		<>
@@ -42,18 +62,18 @@ export default function ContactModal() {
 					</div>
 
 					<div className="contact-form-section">
-						<form name="contact" className="contact-form" method="post" action="">
-							<input className="input" type="text" name="name" placeholder="Name" />
-							<input className="input" type="text" name="email" placeholder="Email" />
+						<form ref={form} onSubmit={sendEmail} className="contact-form">
+							<input className="input" type="text" name="user_name" placeholder="Name" />
+							<input className="input" type="email" name="user_email" placeholder="Email" />
 							<textarea className="input text-area" name="message" placeholder="Message"></textarea>
-							<button className="form-submit-btn" type="submit">Submit</button>
+							<button className="form-submit-btn" type="submit" value="send">Submit</button>
 						</form>
 					</div>
 
 					<div className="contact-info-section">
 						<div className="contact-info">
 							<p className="contact-info-label">Phone:</p>
-							<p className="contact-info-detail">(+90) 5xx xxx xx xx</p>
+							<p className="contact-info-detail">(+90) 545 600 99 86</p>
 						</div>
 						<div className="contact-info">
 							<p className="contact-info-label">Email:</p>
@@ -65,7 +85,7 @@ export default function ContactModal() {
 							<p className="contact-info-label">Address:</p>
 							<p className="contact-info-detail">
 								<a target="_blank" href="https://goo.gl/maps/VGWB4sXd64Qz3ej56">
-									Kuzguncuk 34674 Uskudar/Istanbul
+									Uskudar/Istanbul
 								</a>
 							</p>
 						</div>
