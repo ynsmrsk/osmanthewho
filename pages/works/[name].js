@@ -8,7 +8,7 @@ export default function Video({ video }) {
     return (
         <Layout>
             <section className="videoSection">
-                <button className="closeButton" onClick={() => router.back()}>(x) Close</button>
+                <button className="closeButton" onClick={() => router.push("/works")}>(x) Close</button>
                 <h5 className="videoHeading">
                     <span className="videoHeadingTitle">{video.title}&nbsp;</span>
                     <span className="videoHeadingClient">&nbsp;{video.client}</span>
