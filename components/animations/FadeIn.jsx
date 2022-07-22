@@ -4,29 +4,29 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function FadeIn ({ children }) {
-  let el = useRef(null)
+export function FadeIn({ children }) {
+	let el = useRef(null)
 
-  useEffect(() => {
-    gsap.from(el.current, {
+	useEffect(() => {
+		gsap.from(el.current, {
 			y: 25,
 			duration: 1,
-      autoAlpha: 0,
+			autoAlpha: 0,
 			scrollTrigger: {
 				trigger: el.current,
 				start: "top 70%",
 				end: "top 70%",
 				toggleActions: "play play reverse reverse",
 			},
-    })
-  }, [])
-  return <div ref={el}>{children}</div>
+		})
+	}, [])
+	return <div ref={el}>{children}</div>
 }
 
 export function FadeInStagger({ children }) {
-  const el = useRef(null)
+	const el = useRef(null)
 
-  useEffect(() => {
+	useEffect(() => {
 		gsap.timeline({
 			scrollTrigger: {
 				trigger: el.current,
@@ -42,7 +42,7 @@ export function FadeInStagger({ children }) {
 				ease: "power4",
 				stagger: 0.1,
 			})
-  }, [])
+	}, [])
 
-  return <div className="brands-images" ref={el}>{children}</div>
+	return <div className="brands-images" ref={el}>{children}</div>
 }

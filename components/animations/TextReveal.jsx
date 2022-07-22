@@ -15,11 +15,11 @@ export function TextReveal({ children }) {
 		elements.forEach((element) => {
 			const animation = gsap.to(element, {
 				opacity: 1,
-				ease: "none",
 				scrollTrigger: {
 					trigger: element,
 					start: "center center+=" + (offset / 2),
 					end: "center center-=" + (offset / 2),
+					markers: true,
 					onEnter: () => {
 						gsap.to(element, {
 							y: -50,
@@ -62,8 +62,6 @@ export function TextReveal({ children }) {
 	return <div ref={el}>{children}</div>
 }
 
-///////////////////////////////////////////////////////////////////////////
-
 export function TextRevealPinned({ children }) {
 	const el = useRef()
 
@@ -81,8 +79,8 @@ export function TextRevealPinned({ children }) {
 				}
 			})
 				.from(element, { opacity: 0 })
-				.to(element,  { opacity: 1 })
-				.to(element,  { opacity: 0 })
+				.to(element, { opacity: 1 })
+				.to(element, { opacity: 0 })
 
 			animations.push(animation)
 		})
