@@ -69,7 +69,6 @@
 .self-intro {
 	text-align: center;
 	margin-top: 5rem;
-	background: blue;
 
 	p {
 		@include center-content;
@@ -78,7 +77,6 @@
 		font-weight: bold;
 		height: 350px;
 		will-change: transform;
-		background: green;
 	}
 }
 
@@ -86,12 +84,10 @@
 .skills {
 	@include center-content;
 	position: relative;
-	background: red;
 
 	h3 {
 		text-shadow: 0 10px 40px rgb(0 0 0 / 55%);
 		z-index: 1;
-		background: orange;
 	}
 }
 
