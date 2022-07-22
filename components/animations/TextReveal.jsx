@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
-import useLayoutEffect from '@components/constants/UseIsomorphicLayoutEffect'
+import useLayoutEffect from 'components/constants/UseIsomorphicLayoutEffect'
 
 gsap.registerPlugin(ScrollTrigger)
 
