@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useLayoutEffect, useRef } from "react"
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger)
 export function TextReveal({ children }) {
 	const el = useRef(null)
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const duration = 0.7
 		const animations = []
 		const elements = gsap.utils.toArray(el.current.children)
