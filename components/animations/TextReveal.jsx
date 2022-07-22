@@ -8,53 +8,51 @@ export function TextReveal({ children }) {
 	const el = useRef(null)
 
 	useEffect(() => {
-		setInterval(() => {
-			const duration = 0.7
-			const animations = []
-			const elements = gsap.utils.toArray(el.current.children)
-			const offset = elements[1].offsetTop - elements[0].offsetTop
-			elements.forEach((element) => {
-				const animation = gsap.to(element, {
-					opacity: 1,
-					scrollTrigger: {
-						trigger: element,
-						start: "center center+=" + (offset / 2),
-						end: "center center-=" + (offset / 2),
-						markers: true,
-						onEnter: () => {
-							gsap.to(element, {
-								y: -50,
-								duration,
-								opacity: 1,
-							})
-						},
-						onLeave: () => {
-							gsap.to(element, {
-								y: -100,
-								duration,
-								opacity: 0
-							})
-						},
-						onEnterBack: () => {
-							gsap.to(element, {
-								y: -50,
-								duration,
-								opacity: 1
-							})
-						},
-						onLeaveBack: () => {
-							gsap.to(element, {
-								y: 0,
-								duration,
-								opacity: 0
-							})
-						},
-					}
-				})
-
-				animations.push(animation)
+		const duration = 0.7
+		const animations = []
+		const elements = gsap.utils.toArray(el.current.children)
+		const offset = elements[1].offsetTop - elements[0].offsetTop
+		elements.forEach((element) => {
+			const animation = gsap.to(element, {
+				opacity: 1,
+				scrollTrigger: {
+					trigger: element,
+					start: "center center+=" + (offset / 2),
+					end: "center center-=" + (offset / 2),
+					onEnter: () => {
+						gsap.to(element, {
+							y: -50,
+							duration,
+							opacity: 1,
+						})
+					},
+					onLeave: () => {
+						gsap.to(element, {
+							y: -100,
+							duration,
+							opacity: 0
+						})
+					},
+					onEnterBack: () => {
+						gsap.to(element, {
+							y: -50,
+							duration,
+							opacity: 1
+						})
+					},
+					onLeaveBack: () => {
+						gsap.to(element, {
+							y: 0,
+							duration,
+							opacity: 0
+						})
+					},
+				}
 			})
-		}, 2000)
+
+			animations.push(animation)
+		})
+
 		return () => {
 			animations.forEach((animation) => animation.scrollTrigger.kill())
 		}
