@@ -54,7 +54,7 @@ export function TextReveal({ children }) {
 
 				animations.push(animation)
 			})
-		}, 500)
+		}, 2000)
 		return () => {
 			animations.forEach((animation) => animation.scrollTrigger.kill())
 		}
