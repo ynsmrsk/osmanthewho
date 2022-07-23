@@ -286,6 +286,12 @@
 		margin: 10px 0;
 	}
 
+	.self-intro {
+		p {
+			height: 250px;
+		}
+	}
+
 	.brands {
 		.brands-images {
 			grid-template-columns: 1fr 1fr;

@@ -9,21 +9,23 @@ import { FadeIn, FadeInStagger } from "components/animations/FadeIn"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import ReelModal from "components/modal/ReelModal"
-
 gsap.registerPlugin(ScrollTrigger)
+
 export default function Home() {
+	const [open, setOpen] = useState(false)
+	const plus = useRef(null)
+	const overlay = useRef(null)
 	useEffect(() => {
+		window.onload = function () {
+			if (localStorage.getItem("hasCodeRunBefore") === null) {
+				window.location.reload()
+				localStorage.setItem("hasCodeRunBefore", true);
+			}
+		}
 		let video = document.querySelector("video")
 		window.addEventListener("scroll", function () {
 			video.style.opacity = `${0.7 + window.scrollY / -1000}`
 		})
-	}, [])
-
-	const [open, setOpen] = useState(false)
-
-	const plus = useRef(null)
-	const overlay = useRef(null)
-	useEffect(() => {
 		gsap.to(plus.current, {
 			scale: 100,
 			scrollTrigger: {
