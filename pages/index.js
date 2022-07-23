@@ -21,7 +21,7 @@ export default function Home() {
 			video.style.opacity = `${0.7 + window.scrollY / -1000}`
 		})
 
-		gsap.to(plus.current, {
+		const animation = gsap.to(plus.current, {
 			scale: 100,
 			scrollTrigger: {
 				trigger: overlay.current,
@@ -31,6 +31,7 @@ export default function Home() {
 				pin: true,
 			},
 		})
+		return () => animation.scrollTrigger.kill()
 	}, [])
 
 	return (
