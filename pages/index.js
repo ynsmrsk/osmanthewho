@@ -9,14 +9,12 @@ import { FadeIn, FadeInStagger } from "components/animations/FadeIn"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import ReelModal from "components/modal/ReelModal"
-import { useRouter } from "next/router"
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
 	const [open, setOpen] = useState(false)
 	const plus = useRef(null)
 	const overlay = useRef(null)
-	const router = useRouter()
 	useEffect(() => {
 		let video = document.querySelector("video")
 		window.addEventListener("scroll", function () {
@@ -32,13 +30,6 @@ export default function Home() {
 				pin: true,
 			},
 		})
-
-		window.onload = function () {
-			if (localStorage.getItem("hasCodeRunBefore") === null) {
-				router.reload()
-				localStorage.setItem("hasCodeRunBefore", true);
-			}
-		}
 	}, [])
 
 	return (
@@ -90,7 +81,7 @@ export default function Home() {
 						I work directly with clients from concept to final delivery.
 					</p>
 					<p>
-						We create stylized and engaging content for brands,
+						I create stylized and engaging content for brands,
 						events, and celebrities. Hit me up if you wanna collaborate!
 					</p>
 				</TextReveal>

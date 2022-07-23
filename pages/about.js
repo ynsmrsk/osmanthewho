@@ -31,7 +31,7 @@ export default function About() {
 						My name is Osman. I'm a video creator based in Turkey.
 						I work directly with clients from concept to final delivery.
 						Each project is produced through me and my team.
-						We create stylized and engaging content for brands, events, and celebrities.
+						I create stylized and engaging content for brands, events, and celebrities.
 						Hit me up if you wanna collaborate!
 					</p>
 				</div>
