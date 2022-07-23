@@ -21,18 +21,16 @@ export default function Home() {
 			video.style.opacity = `${0.7 + window.scrollY / -1000}`
 		})
 
-		window.onload = function () {
-			gsap.to(plus.current, {
-				scale: 100,
-				scrollTrigger: {
-					trigger: overlay.current,
-					start: "top top",
-					end: "bottom top",
-					scrub: true,
-					pin: true,
-				},
-			})
-		}
+		gsap.to(plus.current, {
+			scale: 100,
+			scrollTrigger: {
+				trigger: overlay.current,
+				start: "top top",
+				end: "bottom top",
+				scrub: true,
+				pin: true,
+			},
+		})
 	}, [])
 
 	return (
@@ -106,6 +104,7 @@ export default function Home() {
 								objectFit="contain"
 								width="1366"
 								height="570"
+								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -116,6 +115,7 @@ export default function Home() {
 								objectFit="contain"
 								width="640"
 								height="360"
+								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -126,6 +126,7 @@ export default function Home() {
 								objectFit="contain"
 								width="519"
 								height="369"
+								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -136,6 +137,7 @@ export default function Home() {
 								objectFit="contain"
 								width="750"
 								height="336"
+								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -146,6 +148,7 @@ export default function Home() {
 								objectFit="contain"
 								width="1080"
 								height="1350"
+								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -156,6 +159,7 @@ export default function Home() {
 								objectFit="contain"
 								width="640"
 								height="800"
+								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -166,6 +170,7 @@ export default function Home() {
 								objectFit="contain"
 								width="750"
 								height="938"
+								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -176,6 +181,7 @@ export default function Home() {
 								objectFit="contain"
 								width="640"
 								height="729"
+								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -186,6 +192,7 @@ export default function Home() {
 								objectFit="contain"
 								width="480"
 								height="853"
+								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -196,6 +203,7 @@ export default function Home() {
 								objectFit="contain"
 								width="640"
 								height="1138"
+								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -206,6 +214,7 @@ export default function Home() {
 								objectFit="contain"
 								width="320"
 								height="569"
+								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
