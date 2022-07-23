@@ -12,47 +12,49 @@ export function TextReveal({ children }) {
 		const animations = []
 		const elements = gsap.utils.toArray(el.current.children)
 		const offset = elements[0].offsetHeight / 2
-		elements.forEach((element) => {
-			const animation = gsap.to(element, {
-				opacity: 1,
-				scrollTrigger: {
-					trigger: element,
-					start: "center center+=" + offset,
-					end: "center center-=" + offset,
-					markers: true,
-					onEnter: () => {
-						gsap.to(element, {
-							y: -50,
-							duration,
-							opacity: 1,
-						})
-					},
-					onLeave: () => {
-						gsap.to(element, {
-							y: -100,
-							duration,
-							opacity: 0
-						})
-					},
-					onEnterBack: () => {
-						gsap.to(element, {
-							y: -50,
-							duration,
-							opacity: 1
-						})
-					},
-					onLeaveBack: () => {
-						gsap.to(element, {
-							y: 0,
-							duration,
-							opacity: 0
-						})
-					},
-				}
-			})
+		setTimeout(() => {
+			elements.forEach((element) => {
+				const animation = gsap.to(element, {
+					opacity: 1,
+					scrollTrigger: {
+						trigger: element,
+						start: "center center+=" + offset,
+						end: "center center-=" + offset,
+						markers: true,
+						onEnter: () => {
+							gsap.to(element, {
+								y: -50,
+								duration,
+								opacity: 1,
+							})
+						},
+						onLeave: () => {
+							gsap.to(element, {
+								y: -100,
+								duration,
+								opacity: 0
+							})
+						},
+						onEnterBack: () => {
+							gsap.to(element, {
+								y: -50,
+								duration,
+								opacity: 1
+							})
+						},
+						onLeaveBack: () => {
+							gsap.to(element, {
+								y: 0,
+								duration,
+								opacity: 0
+							})
+						},
+					}
+				})
 
-			animations.push(animation)
-		})
+				animations.push(animation)
+			})
+		}, 2000)
 		return () => animations.forEach((animation) => animation.scrollTrigger.kill())
 	}, [])
 
