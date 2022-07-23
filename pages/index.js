@@ -21,7 +21,7 @@ export default function Home() {
 			video.style.opacity = `${0.7 + window.scrollY / -1000}`
 		})
 
-		setTimeout(() => {
+		window.onload = function () {
 			gsap.to(plus.current, {
 				scale: 100,
 				scrollTrigger: {
@@ -32,7 +32,7 @@ export default function Home() {
 					pin: true,
 				},
 			})
-		}, 2500)
+		}
 	}, [])
 
 	return (
