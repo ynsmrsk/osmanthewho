@@ -11,14 +11,14 @@ export function TextReveal({ children }) {
 		const duration = 0.7
 		const animations = []
 		const elements = gsap.utils.toArray(el.current.children)
-		const offset = elements[1].offsetTop - elements[0].offsetTop
+		const offset = elements[0].offsetHeight / 2
 		elements.forEach((element) => {
 			const animation = gsap.to(element, {
 				opacity: 1,
 				scrollTrigger: {
 					trigger: element,
-					start: "center center+=" + (offset / 2),
-					end: "center center-=" + (offset / 2),
+					start: "center center+=" + offset,
+					end: "center center-=" + offset,
 					markers: true,
 					onEnter: () => {
 						gsap.to(element, {
