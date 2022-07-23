@@ -10,6 +10,7 @@ export function TextReveal({ children }) {
 	useEffect(() => {
 		const duration = 0.7
 		const animations = []
+		//  ** TERMPORARY SOLUTION! (setTimeout) **
 		setTimeout(() => {
 			const elements = gsap.utils.toArray(el.current.children)
 			const offset = elements[0].offsetHeight / 2
@@ -20,7 +21,6 @@ export function TextReveal({ children }) {
 						trigger: element,
 						start: "center center+=" + offset,
 						end: "center center-=" + offset,
-						markers: true,
 						onEnter: () => {
 							gsap.to(element, {
 								y: -50,

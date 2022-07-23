@@ -20,16 +20,19 @@ export default function Home() {
 		window.addEventListener("scroll", function () {
 			video.style.opacity = `${0.7 + window.scrollY / -1000}`
 		})
-		gsap.to(plus.current, {
-			scale: 100,
-			scrollTrigger: {
-				trigger: overlay.current,
-				start: "top top",
-				end: "bottom top",
-				scrub: true,
-				pin: true,
-			},
-		})
+
+		setTimeout(() => {
+			gsap.to(plus.current, {
+				scale: 100,
+				scrollTrigger: {
+					trigger: overlay.current,
+					start: "top top",
+					end: "bottom top",
+					scrub: true,
+					pin: true,
+				},
+			})
+		}, 2500)
 	}, [])
 
 	return (
