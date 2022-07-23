@@ -54,7 +54,7 @@ export function TextReveal({ children }) {
 
 				animations.push(animation)
 			})
-		}, 1000)
+		}, 2000)
 		return () => animations.forEach((animation) => animation.scrollTrigger.kill())
 	}, [])
 
@@ -66,25 +66,24 @@ export function TextRevealPinned({ children }) {
 
 	useEffect(() => {
 		const animations = []
-		setTimeout(() => {
-			const elements = gsap.utils.toArray(el.current.children)
-			elements.forEach((element) => {
-				const animation = gsap.timeline({
-					scrollTrigger: {
-						trigger: element,
-						start: "center center",
-						end: "+=" + (window.innerHeight * 0.5),
-						scrub: true,
-						pin: true,
-					}
-				})
-					.from(element, { opacity: 0 })
-					.to(element, { opacity: 1 })
-					.to(element, { opacity: 0 })
-
-				animations.push(animation)
+		const elements = gsap.utils.toArray(el.current.children)
+		elements.forEach((element) => {
+			const animation = gsap.timeline({
+				scrollTrigger: {
+					trigger: element,
+					start: "center center",
+					end: "+=" + (window.innerHeight * 0.5),
+					scrub: true,
+					pin: true,
+				}
 			})
-		}, 2000)
+				.from(element, { opacity: 0 })
+				.to(element, { opacity: 1 })
+				.to(element, { opacity: 0 })
+
+			animations.push(animation)
+		})
+
 		return () => animations.forEach((animation) => animation.scrollTrigger.kill())
 	}, [])
 
