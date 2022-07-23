@@ -15,65 +15,12 @@ export default function Home() {
 	const [open, setOpen] = useState(false)
 	const plus = useRef(null)
 	const overlay = useRef(null)
-	const selfIntro = useRef(null)
-
 	useEffect(() => {
-		///////////////////////////////////////////////////////////
 		let video = document.querySelector("video")
 		window.addEventListener("scroll", function () {
 			video.style.opacity = `${0.7 + window.scrollY / -1000}`
 		})
-		///////////////////////////////////////////////////////////
-
-		// -------------------------------------------------------------------
-		const duration = 0.7
-		const animations = []
-		const elements = gsap.utils.toArray(selfIntro.current.children)
-		const offset = elements[1].offsetTop - elements[0].offsetTop
-		elements.forEach((element) => {
-			const animation = gsap.to(element, {
-				opacity: 1,
-				scrollTrigger: {
-					trigger: element,
-					start: "center center+=" + (offset / 2),
-					end: "center center-=" + (offset / 2),
-					markers: true,
-					onEnter: () => {
-						gsap.to(element, {
-							y: -50,
-							duration,
-							opacity: 1,
-						})
-					},
-					onLeave: () => {
-						gsap.to(element, {
-							y: -100,
-							duration,
-							opacity: 0
-						})
-					},
-					onEnterBack: () => {
-						gsap.to(element, {
-							y: -50,
-							duration,
-							opacity: 1
-						})
-					},
-					onLeaveBack: () => {
-						gsap.to(element, {
-							y: 0,
-							duration,
-							opacity: 0
-						})
-					},
-				}
-			})
-
-			animations.push(animation)
-		})
-		// -------------------------------------------------------------------
-
-		const plusAnimation = gsap.to(plus.current, {
+		gsap.to(plus.current, {
 			scale: 100,
 			scrollTrigger: {
 				trigger: overlay.current,
@@ -83,11 +30,6 @@ export default function Home() {
 				pin: true,
 			},
 		})
-
-		return () => {
-			animations.forEach((animation) => animation.scrollTrigger.kill())
-			plusAnimation.scrollTrigger.kill()
-		}
 	}, [])
 
 	return (
@@ -128,19 +70,21 @@ export default function Home() {
 				</div>
 			</section>
 
-			<section className="self-intro" ref={selfIntro}>
-				<p>
-					I promote living life to the fullest and <br />
-					seeing the world through an optimistic lens.
-				</p>
-				<p>
-					My name is Osman. I'm a video creator based in Turkey.
-					I work directly with clients from concept to final delivery.
-				</p>
-				<p>
-					I create stylized and engaging content for brands,
-					events, and celebrities. Hit me up if you wanna collaborate!
-				</p>
+			<section className="self-intro">
+				<TextReveal>
+					<p>
+						I promote living life to the fullest and <br />
+						seeing the world through an optimistic lens.
+					</p>
+					<p>
+						My name is Osman. I'm a video creator based in Turkey.
+						I work directly with clients from concept to final delivery.
+					</p>
+					<p>
+						I create stylized and engaging content for brands,
+						events, and celebrities. Hit me up if you wanna collaborate!
+					</p>
+				</TextReveal>
 			</section>
 
 			<section className="skills">
@@ -159,7 +103,6 @@ export default function Home() {
 								objectFit="contain"
 								width="1366"
 								height="570"
-								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -170,7 +113,6 @@ export default function Home() {
 								objectFit="contain"
 								width="640"
 								height="360"
-								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -181,7 +123,6 @@ export default function Home() {
 								objectFit="contain"
 								width="519"
 								height="369"
-								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -192,7 +133,6 @@ export default function Home() {
 								objectFit="contain"
 								width="750"
 								height="336"
-								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -203,7 +143,6 @@ export default function Home() {
 								objectFit="contain"
 								width="1080"
 								height="1350"
-								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -214,7 +153,6 @@ export default function Home() {
 								objectFit="contain"
 								width="640"
 								height="800"
-								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -225,7 +163,6 @@ export default function Home() {
 								objectFit="contain"
 								width="750"
 								height="938"
-								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -236,7 +173,6 @@ export default function Home() {
 								objectFit="contain"
 								width="640"
 								height="729"
-								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -247,7 +183,6 @@ export default function Home() {
 								objectFit="contain"
 								width="480"
 								height="853"
-								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -258,7 +193,6 @@ export default function Home() {
 								objectFit="contain"
 								width="640"
 								height="1138"
-								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -269,7 +203,6 @@ export default function Home() {
 								objectFit="contain"
 								width="320"
 								height="569"
-								loading="eager"
 							/>
 						</ParallaxOverflow>
 					</div>
