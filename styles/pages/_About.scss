@@ -1,8 +1,8 @@
 .about-hero {
-  @include center-content;
+	@include center-content;
 	min-height: 100vh;
 	margin-top: 40px;
-	margin-bottom: 10vw;
+	margin-bottom: 5vw;
 }
 
 .about-hero h1 {
@@ -21,17 +21,20 @@
 .about-photo {
 	margin-bottom: 10vw;
 	position: relative;
+
 	img {
 		width: 100%;
 		object-fit: cover;
 		display: block;
 	}
+
 	.about-linear-gradient-div-top,
 	.about-linear-gradient-div-bottom {
 		position: absolute;
 		width: 100%;
 		height: 50%;
 	}
+
 	.about-linear-gradient-div-top {
 		background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
 		top: -2.5%;
@@ -44,12 +47,13 @@
 }
 
 .intro {
-	margin-bottom: 15vw;
+	margin-bottom: 10vw;
+
 	.intro-text {
 		text-align: center;
-		a {
-			font-style: italic;
-			text-decoration: underline;
+
+		p:not(:last-child) {
+			margin-bottom: 10px;
 		}
 	}
 }

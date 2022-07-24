@@ -30,7 +30,8 @@ export default function About() {
 					<p>
 						My name is Osman. I'm a video creator based in Turkey.
 						I work directly with clients from concept to final delivery.
-						Each project is produced through me and my team.
+					</p>
+					<p>
 						I create stylized and engaging content for brands, events, and celebrities.
 						Hit me up if you wanna collaborate!
 					</p>
