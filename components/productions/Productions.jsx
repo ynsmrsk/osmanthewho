@@ -108,7 +108,7 @@ export default function Productions() {
 							setTitle(data.title)
 						}}
 					>
-						<img src={data.img} />
+						<img src={data.img} alt={`${data.title}`} />
 						<span>{data.title}</span>
 					</div>
 				))}

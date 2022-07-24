@@ -95,12 +95,6 @@
 	position: absolute;
 	overflow: hidden;
 
-	img {
-		width: 100%;
-		height: auto;
-		object-fit: contain;
-	}
-
 	#img-wrapper_1-1,
 	#img-wrapper_1-2,
 	#img-wrapper_1-3,
@@ -196,6 +190,7 @@
 
 	h4 {
 		margin-bottom: 5rem;
+		opacity: 0.75;
 	}
 
 	hr {

@@ -9,6 +9,7 @@ import { FadeIn, FadeInStagger } from "components/animations/FadeIn"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/dist/ScrollTrigger"
 import ReelModal from "components/modal/ReelModal"
+
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
@@ -43,8 +44,8 @@ export default function Home() {
 			<section className="landing full-bleed">
 				<video
 					className="video-full-screen"
-					poster="/images/showreel.png"
-					src="/images/showreel.m4v"
+					poster="/images/showreel.webp"
+					src="/images/showreel.webm"
 					muted
 					playsInline
 					autoPlay
@@ -106,6 +107,7 @@ export default function Home() {
 								width="1366"
 								height="570"
 								priority="true"
+								alt="Osman Işık's photo"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -117,6 +119,7 @@ export default function Home() {
 								width="640"
 								height="360"
 								priority="true"
+								alt="Osman Işık's photo"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -128,6 +131,7 @@ export default function Home() {
 								width="519"
 								height="369"
 								priority="true"
+								alt="Osman Işık's photo"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -139,6 +143,7 @@ export default function Home() {
 								width="750"
 								height="336"
 								priority="true"
+								alt="Osman Işık's photo"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -150,6 +155,7 @@ export default function Home() {
 								width="1080"
 								height="1350"
 								priority="true"
+								alt="Osman Işık's photo"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -161,6 +167,7 @@ export default function Home() {
 								width="640"
 								height="800"
 								priority="true"
+								alt="Osman Işık's photo"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -172,6 +179,7 @@ export default function Home() {
 								width="750"
 								height="938"
 								priority="true"
+								alt="Osman Işık's photo"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -183,6 +191,7 @@ export default function Home() {
 								width="640"
 								height="729"
 								priority="true"
+								alt="Osman Işık's photo"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -194,6 +203,7 @@ export default function Home() {
 								width="480"
 								height="853"
 								priority="true"
+								alt="Osman Işık's photo"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -205,6 +215,7 @@ export default function Home() {
 								width="640"
 								height="1138"
 								priority="true"
+								alt="Osman Işık's photo"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -216,6 +227,7 @@ export default function Home() {
 								width="320"
 								height="569"
 								priority="true"
+								alt="Osman Işık's photo"
 							/>
 						</ParallaxOverflow>
 					</div>
@@ -231,16 +243,16 @@ export default function Home() {
 					<hr />
 				</FadeIn>
 				<FadeInStagger>
-					<div className="brand-image"><img src="/images/brands/colored/xiaomi.png" alt="Xiaomi" /></div>
-					<div className="brand-image"><img src="/images/brands/colored/coca-cola.png" alt="Coca Cola" /></div>
-					<div className="brand-image"><img src="/images/brands/colored/red-bull.png" alt="Red Bull" /></div>
-					<div className="brand-image"><img src="/images/brands/colored/corona.png" alt="Corona" /></div>
-					<div className="brand-image"><img src="/images/brands/colored/tefal.png" alt="Tefal" /></div>
-					<div className="brand-image"><img src="/images/brands/colored/samsung.png" alt="Samsung" /></div>
-					<div className="brand-image"><img src="/images/brands/colored/trt.png" alt="TRT" /></div>
-					<div className="brand-image"><img src="/images/brands/colored/altin-pusula.png" alt="Altın Pusula" /></div>
-					<div className="brand-image"><img src="/images/brands/colored/aydin-dogan.png" alt="Aydın Doğan Vakfı" /></div>
-					<div className="brand-image"><img src="/images/brands/colored/spx.png" alt="SPX" /></div>
+					<div className="brand-image"><img src="/images/brands/xiaomi.png" alt="Xiaomi" /></div>
+					<div className="brand-image"><img src="/images/brands/coca-cola.png" alt="Coca Cola" /></div>
+					<div className="brand-image"><img src="/images/brands/red-bull.png" alt="Red Bull" /></div>
+					<div className="brand-image"><img src="/images/brands/corona.png" alt="Corona" /></div>
+					<div className="brand-image"><img src="/images/brands/tefal.png" alt="Tefal" /></div>
+					<div className="brand-image"><img src="/images/brands/samsung.png" alt="Samsung" /></div>
+					<div className="brand-image"><img src="/images/brands/trt.png" alt="TRT" /></div>
+					<div className="brand-image"><img src="/images/brands/altin-pusula.png" alt="Altın Pusula" /></div>
+					<div className="brand-image"><img src="/images/brands/aydin-dogan.png" alt="Aydın Doğan Vakfı" /></div>
+					<div className="brand-image"><img src="/images/brands/spx.png" alt="SPX" /></div>
 				</FadeInStagger>
 			</section>
 

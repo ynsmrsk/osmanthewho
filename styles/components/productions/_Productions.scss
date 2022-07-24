@@ -20,7 +20,7 @@
 .productions ul {
 	margin-bottom: 2rem;
 	display: flex;
-	flex-wrap:  wrap;
+	flex-wrap: wrap;
 	width: 90%;
 	max-width: 600px;
 	justify-content: space-between;
@@ -46,23 +46,21 @@
 
 .item {
 	cursor: pointer;
-}
 
-.item img {
-	width: 100%;
-	height: auto;
-	transition: 0.7s;
-}
+	img {
+		transition: 0.7s;
 
-.item img:hover {
-	filter: brightness(60%);
+		&:hover {
+			filter: brightness(60%);
+		}
+	}
 }
 
 .item span {
 	text-transform: uppercase;
-	font-weight: bold;
-	opacity: 0.7;
-	letter-spacing: 3px;
+	font-weight: bolder;
+	opacity: 0.6;
+	letter-spacing: 2px;
 }
 
 .view-more-btn {
@@ -104,5 +102,4 @@
 	}
 }
 
-@media screen and  (max-width: 899px) {
-}
+@media screen and (max-width: 899px) {}

@@ -96,7 +96,7 @@ export default function ContactModal() {
 							<p className="contact-info-label">Address:</p>
 							<p className="contact-info-detail">
 								<a target="_blank" href="https://goo.gl/maps/VGWB4sXd64Qz3ej56">
-									Uskudar/Istanbul
+									İstanbul/Turkey
 								</a>
 							</p>
 						</div>
