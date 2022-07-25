@@ -1,6 +1,5 @@
 import { useEffect, forwardRef } from "react"
 import gsap from "gsap"
-import useWindowWidth from "components/constants/UseWindowWidth"
 
 const MouseMoveScroll = forwardRef(({ children }, holder) => {
 	useEffect(() => {

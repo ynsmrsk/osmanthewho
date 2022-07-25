@@ -16,31 +16,35 @@
 .videoHeading {
   display: flex;
   margin-bottom: 2rem;
-  white-space: nowrap;
+  padding: 0 10px;
 }
 
 .video {
   cursor: pointer;
   max-width: 100%;
-  max-height: 80%;
+  max-height: 75%;
 }
 
 @media (min-width: 899px) {
   .videoHeadingTitle::after {
-    content: "⸻";
+    content: "\00a0 ⸻";
   }
 
-  .video {
-    max-width: 80%;
+  .videoHeadingClient::before {
+    content: "\00a0";
   }
 }
 
 @media (max-width: 899px) {
+  .videoSection {
+    height: 90vh;
+  }
+
   .videoHeading {
     flex-direction: column;
   }
 
   .video {
-    max-height: 65%;
+    max-height: 50%;
   }
 }

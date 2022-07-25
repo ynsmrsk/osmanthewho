@@ -74,6 +74,8 @@
 		@include center-content;
 		opacity: 0;
 		font-size: $step-5;
+		line-height: $line-height-smd;
+		word-spacing: -3px;
 		font-weight: bold;
 		height: 350px;
 		will-change: transform;
@@ -284,6 +286,7 @@
 	.self-intro {
 		p {
 			height: 250px;
+			font-weight: bolder;
 		}
 	}
 

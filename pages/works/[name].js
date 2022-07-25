@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import supabase from "utils/supabase";
-import { getVideo } from "utils/get-files";
+import { getVideo, getThumbnailImage } from "utils/get-files";
 import Layout from "components/constants/Layout";
 
 export default function Video({ video }) {
@@ -10,13 +10,15 @@ export default function Video({ video }) {
             <section className="videoSection">
                 <button className="closeButton" onClick={() => router.push("/works")}>(x) Close</button>
                 <h5 className="videoHeading">
-                    <span className="videoHeadingTitle">{video.title}&nbsp;</span>
-                    <span className="videoHeadingClient">&nbsp;{video.client}</span>
+                    <span className="videoHeadingTitle">{video.title}</span>
+                    <span className="videoHeadingClient">{video.client}</span>
                 </h5>
                 <video
                     className="video"
-                    controls={true}
+                    playsInline
+                    controls
                     src={getVideo(video.name)}
+                    poster={getThumbnailImage(video.name)}
                 />
             </section>
         </Layout>

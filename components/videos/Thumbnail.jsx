@@ -24,26 +24,47 @@ export default function Thumbnail({ videoName, width, height, x, y }) {
     }
 
     return (
-        <div
-            className="thumbnail"
-            style={styles}
-            data-size={width}
-            onMouseOver={() => setFocus(true)}
-            onMouseOut={() => setFocus(false)}
-        >
-            <Link href={`/works/${videoName}`}>
-                <a>
-                    <video
-                        ref={video}
-                        className="thumbnailVideo"
-                        loop={true}
-                        muted={true}
-                        playsInline={true}
-                        src={getThumbnailVideo(videoName)}
-                        poster={getThumbnailImage(videoName)}
-                    />
-                </a>
-            </Link>
-        </div>
+        <>
+            {
+                typeof window !== "undefined" && window.innerWidth < 768 ? (
+                    <div
+                        className="thumbnail"
+                        style={styles}
+                        data-size={width}
+                    >
+                        <Link href={`/works/${videoName}`}>
+                            <a>
+                                <img
+                                    src={getThumbnailImage(videoName)}
+                                    alt="Osmanthewho videos thumbnail image"
+                                />
+                            </a>
+                        </Link>
+                    </div>
+                ) : (
+                    <div
+                        className="thumbnail"
+                        style={styles}
+                        data-size={width}
+                        onMouseOver={() => setFocus(true)}
+                        onMouseOut={() => setFocus(false)}
+                    >
+                        <Link href={`/works/${videoName}`}>
+                            <a>
+                                <video
+                                    ref={video}
+                                    className="thumbnailVideo"
+                                    loop={true}
+                                    muted={true}
+                                    playsInline={true}
+                                    src={getThumbnailVideo(videoName)}
+                                    poster={getThumbnailImage(videoName)}
+                                />
+                            </a>
+                        </Link>
+                    </div>
+                )
+            }
+        </>
     )
 }

@@ -44,8 +44,7 @@ export default function Home() {
 			<section className="landing full-bleed">
 				<video
 					className="video-full-screen"
-					poster="/images/showreel.webp"
-					src="/images/showreel.webm"
+					src="/images/showreel.mp4"
 					muted
 					playsInline
 					autoPlay

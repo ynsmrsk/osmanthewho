@@ -60,15 +60,9 @@
 
 @media (max-width: 599px) {
 	.about-hero {
-		text-align: left;
-		align-items: start;
+		align-items: center;
 		min-height: unset;
-		margin-top: 100px;
-	}
-
-	.intro {
-		.intro-text {
-			text-align: left;
-		}
+		margin-top: 150px;
+		margin-bottom: 10vw;
 	}
 }
