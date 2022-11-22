@@ -249,7 +249,7 @@ export default function Home() {
 					<div className="brand-image"><img src="/images/brands/tefal.png" alt="Tefal" /></div>
 					<div className="brand-image"><img src="/images/brands/samsung.png" alt="Samsung" /></div>
 					<div className="brand-image"><img src="/images/brands/trt.png" alt="TRT" /></div>
-					<div className="brand-image"><img src="/images/brands/altin-pusula.png" alt="Altın Pusula" /></div>
+					<div className="brand-image"><img src="/images/brands/starbucks.png" alt="Starbucks" /></div>
 					<div className="brand-image"><img src="/images/brands/aydin-dogan.png" alt="Aydın Doğan Vakfı" /></div>
 					<div className="brand-image"><img src="/images/brands/spx.png" alt="SPX" /></div>
 				</FadeInStagger>

@@ -21,7 +21,7 @@ $letter-spacing-lg: 4.5px;
 $letter-spacing-xl: 9px;
 
 // Fluid font sizes
-$step-0: clamp(1.06rem, 1.09rem + -0.13vw, 0.88rem);
+$step-0: clamp(1.06rem, 1.09rem + (-0.13vw), 0.88rem);
 $step-1: clamp(1.13rem, 1.12rem + 0.07vw, 1.24rem);
 $step-2: clamp(1.21rem, 1.14rem + 0.38vw, 1.75rem);
 $step-3: clamp(1.29rem, 1.13rem + 0.84vw, 2.47rem);
