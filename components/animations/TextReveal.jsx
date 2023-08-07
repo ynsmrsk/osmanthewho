@@ -10,11 +10,11 @@ export function TextReveal({ children }) {
 	useEffect(() => {
 		const duration = 0.7
 		const animations = []
-		//  ** TERMPORARY SOLUTION! (setTimeout) **
+		// TODO ** TERMPORARY SOLUTION! (setTimeout) **
 		setTimeout(() => {
 			const elements = gsap.utils.toArray(el.current.children)
 			const offset = elements[0].offsetHeight / 2
-			elements.forEach((element) => {
+			elements.forEach(element => {
 				const animation = gsap.to(element, {
 					opacity: 1,
 					scrollTrigger: {
@@ -67,7 +67,7 @@ export function TextRevealPinned({ children }) {
 	useEffect(() => {
 		const animations = []
 		const elements = gsap.utils.toArray(el.current.children)
-		elements.forEach((element) => {
+		elements.forEach(element => {
 			const animation = gsap.timeline({
 				scrollTrigger: {
 					trigger: element,
